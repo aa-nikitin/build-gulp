@@ -1,5 +1,8 @@
 global.$ = {
+    config: require('./gulp/config'),
     tasks : [
+        'sass',
+        'pug',
         'watch',
         'serve',
         'clean'
@@ -16,6 +19,10 @@ $.tasks.forEach(function(task) {
 
 $.gulp.task('default', $.gulp.series(
     'clean',
+    $.gulp.parallel(
+        'sass',
+        'pug'
+    ),
     $.gulp.parallel(
         'watch',
         'serve'
