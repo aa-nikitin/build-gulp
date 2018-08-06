@@ -6,5 +6,6 @@ module.exports = function() {
         $.gulp.watch('src/pages/**/*.pug', $.gulp.series('pug'));
         $.gulp.watch('src/fonts/**/*.*', $.gulp.series('copy:fonts'));
         $.gulp.watch('src/images/**/*.*', $.gulp.series('copy:image'));
+        $.gulp.watch('src/js/**/*.js', $.gulp.series('js:process'));
     });
 }

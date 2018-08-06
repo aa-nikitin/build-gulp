@@ -9,8 +9,10 @@ global.$ = {
         'copy.image',
         'sprite.images',
         'sprite.svg',
+        'js.process',
         'clean',
-        'sass.build'
+        'sass.build',
+        'js.process.build'
     ],
     gulp : require('gulp'),
     del : require('del'),
@@ -30,10 +32,24 @@ $.gulp.task('default', $.gulp.series(
         'copy:fonts',
         'copy:image',
         'sprite:images',
+        'js:process',
         'sprite:svg'
     ),
     $.gulp.parallel(
         'watch',
         'serve'
+    )
+));
+
+$.gulp.task('build', $.gulp.series(
+    'clean',
+    $.gulp.parallel(
+        'sass:build',
+        'pug',
+        'copy:fonts',
+        'copy:image',
+        'sprite:images',
+        'sprite:svg',
+        'js:process:build'
     )
 ));
