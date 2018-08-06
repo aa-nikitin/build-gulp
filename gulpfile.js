@@ -5,7 +5,12 @@ global.$ = {
         'pug',
         'watch',
         'serve',
-        'clean'
+        'copy.fonts',
+        'copy.image',
+        'sprite.images',
+        'sprite.svg',
+        'clean',
+        'sass.build'
     ],
     gulp : require('gulp'),
     del : require('del'),
@@ -21,7 +26,11 @@ $.gulp.task('default', $.gulp.series(
     'clean',
     $.gulp.parallel(
         'sass',
-        'pug'
+        'pug',
+        'copy:fonts',
+        'copy:image',
+        'sprite:images',
+        'sprite:svg'
     ),
     $.gulp.parallel(
         'watch',
