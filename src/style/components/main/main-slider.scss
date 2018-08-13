@@ -1,0 +1,14 @@
+.main-slider {
+    border: 0px;
+    margin-bottom: 40px;
+
+    & .flex-direction-nav {
+        display: none;
+    }
+
+    @include lg() {
+        & .flex-control-nav {
+            display: none;
+        }
+    }
+}

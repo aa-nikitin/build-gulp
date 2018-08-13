@@ -1,0 +1,17 @@
+.footer-top {
+    
+
+    padding: 30px 0px;
+
+    &__contacts {
+        margin-top: 20px;
+    }
+
+    @include lg() {
+        display: none;    
+    }
+
+
+    
+}
+

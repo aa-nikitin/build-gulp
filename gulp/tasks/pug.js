@@ -11,7 +11,7 @@ module.exports = function() {
                     }
                 })    
             }))
-            .pipe($.gp.pug())
+            .pipe($.gp.pug({ pretty: true }))
             .pipe($.gulp.dest('build/'));
     });
 }

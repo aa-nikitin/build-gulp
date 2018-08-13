@@ -1,9 +1,26 @@
-//components
+// -- grids --
+
+$sm : 576px; $md : 768px; $lg : 992px; $xl : 1260px;
+
+@import "grids/flexgrid.scss";
+//@import "grids/floatgrid.scss";
+
+
+
+// -- settings --
+
+@import "settings/colors.scss";
+@import "settings/mixins.scss";
+@import "settings/fonts.scss";
+@import "settings/base.scss";
+@import "settings/typography.scss";
+
+
+
+// -- components -- 
 @import "components/**/*";
 
-$color : #ccc;
-.title {
-    color: $color;
-    font-size: 20px;
-}
+
+
+
 

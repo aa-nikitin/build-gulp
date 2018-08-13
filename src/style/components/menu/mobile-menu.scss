@@ -1,0 +1,9 @@
+.mobile-menu {
+
+    & .active {
+        & .mobile-menu__link {
+            font-weight: bold;
+            color: $mmenu-color-active;
+        }
+    }
+}

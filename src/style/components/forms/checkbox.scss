@@ -1,0 +1,66 @@
+// -- options --
+
+$field-bg : #e2e2e2; //- цвет чекбокса
+$field-check-bg : #ca0741; //- цвет выделенного чекбокса
+$field-error : #ca0741; //- цвет ошибки
+
+
+
+.checkbox {
+    position:relative;
+    display: block;
+
+    &__input {
+        display: none;
+    }
+
+    &__custom {
+        position: absolute;      
+        width: 19px;          
+        height: 19px;            
+        background:$field-bg;
+        margin-right:10px;
+        @include animation();
+        display: block;
+        top: 0px;
+    }
+
+    &__custom,
+    &__label {
+        display: inline-block;
+        vertical-align: middle; 
+        cursor: pointer;    
+    }
+
+    &__label {
+        padding-left:30px;
+        & a {
+            /*display: inline-block;
+            margin-top:5px;*/
+        }    
+    }
+
+    &__input:checked + &__custom {
+        &:before{
+            content: "";            
+            display: block;          
+            position: absolute;     
+            @include centered();
+            width:8px;
+            height:8px;
+            background: $field-check-bg;
+            font-weight: bold;
+        }
+    }
+
+    & .error-checked {
+        & .checkbox__custom {
+            background-color: mix(#fff, $field-error, 70%);    
+        }    
+
+        & .checkbox__label {
+            color: $field-error;    
+        }
+    }
+
+}

@@ -1,0 +1,29 @@
+.top-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__item {
+        display: block;
+        &.active {
+            background: $top-menu-act-bg;
+            &__link { 
+                color: $top-menu-act-color;     
+            }
+        }
+    }
+
+    &__link {
+        padding: 15px 40px;
+        display: block;
+        text-decoration: none;
+        color: $top-menu-color;
+        transition-property: all;
+        transition-duration: .7s;
+        &:hover {
+            color: $top-menu-act-color;
+            background: $top-menu-act-bg;
+            transform: translateY(-5px);    
+        }
+    }
+}

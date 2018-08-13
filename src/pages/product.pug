@@ -1,0 +1,17 @@
+extends ./settings/template
+
+block variables
+    - var title = 'Каталог'
+
+block content
+    .page-wrap
+        .container.content
+            .row
+                .col-xs-12.content__right
+                    +breadcrumbs('breadcrumbs', breadcrumbs)
+
+                    h1.page-title-1 Заголовок H1
+
+
+
+        

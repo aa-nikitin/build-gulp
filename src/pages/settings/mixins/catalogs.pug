@@ -1,0 +1,39 @@
+//- -- вывод галереи --
+        - имя класса, 
+        - массив[0-картинка, 1-ссылка]
+
+mixin photogallery(className, items, classWrap) 
+    each item,key in items 
+        li(class=`${classWrap} ${className}__item`)
+            a(href=`./assets/img/files/${item[1]}` data-fancybox=`gallery` class=`${className}__link`)
+                img(class=`${className}__img` src=`./assets/img/files/${item[0]}`, alt=``)
+
+
+
+//- -- вывод продуктов(услуг) в каруселе [* flexslider *] --
+        - имя класса,
+        - массив[0-картинка, 1-заголовок, 2-подзаголовок, 3-цена, 4-ссылка]
+
+mixin products(classSlider,className,items) 
+    each item,key in items 
+        div(class=`${classSlider}__item`)
+            div(class=`${className}`)
+                a(href=`${item[4]}` class=`${className}__img`)
+                    img(class=`${className}__photo` src=`./assets/img/files/${item[0]}`, alt=``)
+                    span(class=`${className}__price`) !{item[3]}
+                a(class=`${className}__header` href="#") #{item[1]}
+                div(class=`${className}__info`) !{item[2]}
+                div(class=`${className}__order`)
+                    a(class=`button-order button_red ${className}__button`) Рассчитать стоимость
+
+//- -- вывод категорий --
+        - имя класса,
+        - массив[0-картинка, 1-заголовок, 2-ссылка]
+
+mixin category(classWrap, className,items) 
+    each item,key in items 
+        div(class=`${classWrap}`)
+            div(class=`${className}`)
+                a(href=`${item[2]}` class=`${className}__img`)
+                    img(class=`${className}__photo` src=`./assets/img/files/${item[0]}`, alt=``)
+                a(class=`${className}__name` href="#") !{item[1]}

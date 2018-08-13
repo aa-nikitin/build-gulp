@@ -1,0 +1,21 @@
+.socials {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    &__item {
+        display: block;
+        margin-right: 20px;
+        &:last-child {
+            margin-right: 0px;
+        }
+    }
+    &__icon {
+        display: block;
+        opacity: 0.5;
+        transition-property: opacity;
+        transition-duration: .7s;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}

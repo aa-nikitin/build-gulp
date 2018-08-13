@@ -1,0 +1,47 @@
+$count-col : 12; // -Количество колонок
+$indent-col : 15px; // -Отступы в колонках
+$screen-extensions: (xs: 0px, sm: 540px, md: 720px, lg: 960px, xl: 1140px); // -расширения экранов
+
+.container-fluid {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 32px;
+    padding-left: 32px;
+}
+  
+.row {
+    margin-right: -$indent-col;
+    margin-left: -$indent-col;
+    &:after{
+        content:'';
+        display: block;
+        clear: both;
+    }
+}
+
+@each $key, $size in $screen-extensions {
+    
+    @media only screen and (min-width: $size) {
+        .container {
+            @if $key == xs {
+                padding-right: $indent-col;
+                padding-left: $indent-col;
+                width: auto;   
+            } @else {
+                width: $size - 2;
+                margin:0 auto;
+            }
+        }
+
+        @for $i from 1 through $count-col {
+            $w-col : (100% / $count-col) * $i;
+            .col-#{$key}-#{$i} {
+                width: $w-col;
+                float:left; 
+                padding-right: $indent-col;
+                padding-left: $indent-col; 
+            }
+        }
+    }
+
+}

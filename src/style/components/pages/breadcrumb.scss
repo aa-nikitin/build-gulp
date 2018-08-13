@@ -1,0 +1,40 @@
+// -- options --
+
+$color-font : #484848; //- цвет заголовка
+$color-link : #314b7e; //- цвет закрыть
+$separator : '/'; //- цвет подложки
+
+.breadcrumbs {
+    margin: 0px 0px 15px;
+    padding: 0;
+    color: $color-font;
+    line-height: 150%;
+
+    & li {
+        display: inline-block;
+        padding: 0px 4px 0px 0px !important;
+        background:none;
+        &:before {
+            display: none;
+        }
+        &:after {
+            content: $separator;
+            display: inline-block;
+        }
+        &:last-child:after {
+            content: '';
+        }
+    
+        & a {
+            margin-right: 7px;
+            display: inline-block;
+            color: $color-link;
+            &:hover {
+                text-decoration: none;
+            }
+        } 
+    }
+
+}
+
+

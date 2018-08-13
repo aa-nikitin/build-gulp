@@ -1,0 +1,31 @@
+//- -- вывод слайдера --
+        - имя класса,
+        - массив[0-картинка, 1-ссылка]
+
+mixin slider(className, items) 
+    each item,key in items 
+        li(class=`${className}__item`)
+            if (item[1]) 
+                a( href=`${item[1]}` class=`${className}__link`)
+                    img(class=`${className}__img` src=`./assets/img/files/${item[0]}`, alt=``)
+            else
+                img(class=`${className}__img` src=`./assets/img/files/${item[0]}`, alt=``)
+
+
+
+
+//- -- вывод продуктов(услуг) в каруселе [* flexslider *] --
+        - имя класса,
+        - массив[0-картинка, 1-заголовок, 2-подзаголовок, 3-цена, 4-ссылка]
+
+mixin products-slider(classSlider,className,items) 
+    each item,key in items 
+        li(class=`${classSlider}__item`)
+            span(class=`${className}`)
+                a(href=`${item[4]}` class=`${className}__img`)
+                    img(class=`${className}__photo` src=`./assets/img/files/${item[0]}`, alt=``)
+                    span(class=`${className}__price`) !{item[3]}
+                a(class=`${className}__header` href="#") #{item[1]}
+                span(class=`${className}__info`) !{item[2]}
+                span(class=`${className}__order`)
+                    a(class=`button-order button_red ${className}__button`) Рассчитать стоимость

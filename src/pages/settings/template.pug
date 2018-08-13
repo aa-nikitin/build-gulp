@@ -1,0 +1,33 @@
+include ./mixins/common
+include ./mixins/sliders
+include ./mixins/forms
+include ./mixins/catalogs
+
+include ./variables
+block variables
+    - var title = 'title'
+
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        title #{title}
+        meta(content="" name="author")
+        meta(content="" name="description")
+        meta(content="" name="keywords")
+        meta(content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport")
+        meta(content="ie=edge" http-equiv="x-ua-compatible")
+
+        link(rel="stylesheet", href="./assets/css/libs.min.css")
+        link(rel="stylesheet", href="./assets/img/sprite/sprite.css")
+        link(rel="stylesheet", href="./assets/css/app.css")
+
+        script(src='assets/js/libs.min.js')
+    body
+        include ../common/header
+        block content
+        include ../common/footer
+        nav(id="mmenu")
+            +menu("mobile-menu", menu, 2)
+        include ../common/popup
+    script(src='assets/js/app.js')

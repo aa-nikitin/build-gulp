@@ -12,7 +12,9 @@ global.$ = {
         'js.process',
         'clean',
         'sass.build',
-        'js.process.build'
+        'js.process.build',
+        'js.libs',
+        'css.libs'
     ],
     gulp : require('gulp'),
     del : require('del'),
@@ -33,7 +35,10 @@ $.gulp.task('default', $.gulp.series(
         'copy:image',
         'sprite:images',
         'js:process',
-        'sprite:svg'
+        'js:libs',
+        'sprite:svg',
+        'js:libs',
+        'css:libs'
     ),
     $.gulp.parallel(
         'watch',
@@ -50,6 +55,8 @@ $.gulp.task('build', $.gulp.series(
         'copy:image',
         'sprite:images',
         'sprite:svg',
-        'js:process:build'
+        'js:process:build',
+        'js:libs',
+        'css:libs'
     )
 ));

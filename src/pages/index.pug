@@ -1,9 +1,75 @@
-body
-    link(rel="stylesheet", href="./assets/css/app.css")
-    script(src='assets/js/app.js' defer)
+extends ./settings/template
 
-    link(rel="stylesheet", href="./assets/img/sprite/sprite.css")
-    h1.title start
-    .flex-test
-        .icon-fb
-        .icon-vk
+block variables
+    - var title = 'Главная'
+    -
+        var slider = [
+            ['slide-1.jpg', '#'],
+            ['slide-2.jpg', ''],
+            ['slide-3.jpg', '']
+        ]
+
+        var category = [
+            ['cat-1.jpg', 'Подкатегория 1 <br> dop', '#'],
+            ['cat-2.jpg', 'Подкатегория 2', '#'],
+            ['cat-3.jpg', 'Подкатегория 3', '#'],
+            ['cat-4.jpg', 'Подкатегория 4', '#'],
+            ['cat-4.jpg', 'Подкатегория 5', '#'],
+            ['cat-3.jpg', 'Подкатегория 6', '#'],
+            ['cat-2.jpg', 'Подкатегория 7', '#'],
+            ['cat-1.jpg', 'Подкатегория 8', '#']
+        ]
+
+        var product_item = [
+            ['prod-1.jpg', 'Трал NOOTEBOOM', 'Масса перевозимого груза (в тоннах): до 39 тонн Минимальный заказ: 8 часов', 'от 50 руб./км', '#'],
+            ['prod-2.jpg', 'Трал NOOTEBOOM', 'Масса перевозимого груза (в тоннах): до 39 тонн Минимальный заказ: 8 часов', 'от 50 руб./км', '#'],
+            ['prod-3.jpg', 'Трал NOOTEBOOM', 'Масса перевозимого груза (в тоннах): до 39 тонн Минимальный заказ: 8 часов', 'от 50 руб./км', '#'],
+            ['prod-1.jpg', 'Трал NOOTEBOOM', 'Масса перевозимого груза (в тоннах): до 39 тонн Минимальный заказ: 8 часов', 'от 50 руб./км', '#'],
+            ['prod-2.jpg', 'Трал NOOTEBOOM', 'Масса перевозимого груза (в тоннах): до 39 тонн Минимальный заказ: 8 часов', 'от 50 руб./км', '#'],
+            ['prod-3.jpg', 'Трал NOOTEBOOM', 'Масса перевозимого груза (в тоннах): до 39 тонн Минимальный заказ: 8 часов', 'от 50 руб./км', '#'],
+            ['prod-1.jpg', 'Трал NOOTEBOOM', 'Масса перевозимого груза (в тоннах): до 39 тонн Минимальный заказ: 8 часов', 'от 50 руб./км', '#']
+        ]
+
+        var gallery = [
+            ['gall.jpg', 'gall.jpg'],
+            ['gall.jpg', 'gall.jpg'],
+            ['gall.jpg', 'gall.jpg'],
+            ['gall.jpg', 'gall.jpg'],
+            ['gall.jpg', 'gall.jpg'],
+            ['gall.jpg', 'gall.jpg'],
+            ['gall.jpg', 'gall.jpg'],
+            ['gall.jpg', 'gall.jpg'],
+            ['gall.jpg', 'gall.jpg'],
+            ['gall.jpg', 'gall.jpg'],
+            ['gall.jpg', 'gall.jpg'],
+            ['gall.jpg', 'gall.jpg'],
+            ['gall.jpg', 'gall.jpg'],
+            ['gall.jpg', 'gall.jpg']
+        ]
+
+block content
+
+    .container.content
+
+        .flexslider.main-slider
+            ul.slides
+                +slider('main-slider', slider) 
+
+        h2.page-title-2.page-title_center
+            |Заголовок H2
+        
+        .category
+            +category('category__item', 'category-item', category) 
+
+        h2.page-title-2.page-title_center
+            |Заголовок H2
+
+        .flexslider.main-products
+            ul.slides
+                +products-slider('main-products', 'product-item', product_item) 
+
+        h2.page-title-2.page-title_center
+            |Заголовок H2
+
+        ul.main-gallery
+            +photogallery('main-gallery', gallery, '')

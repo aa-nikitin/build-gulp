@@ -1,0 +1,20 @@
+.footer-menu {
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid #516184;
+    border-bottom: 1px solid #516184;
+
+    &__item {
+        display: block;
+    }
+
+    &__link {
+        display: block;
+        color: #fff;
+        text-decoration: none;
+        padding: 15px 10px;
+        &:hover {
+            text-decoration: underline;    
+        }
+    }
+}
