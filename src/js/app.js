@@ -1,4 +1,3 @@
-import avg from './modules/1.js';
 import popup from './modules/popup.js';
 
 $('.main-slider').flexslider({
@@ -34,5 +33,4 @@ $('nav#mmenu').mmenu({
 });
 
 popup('popup-order', 'overflow_hidden');
-/*$('.title').addClass('test');
-console.log(avg(12,213,231));*/
+
