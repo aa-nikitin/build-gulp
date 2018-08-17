@@ -14,7 +14,7 @@ mixin checkbox(className,idName)
 //- -- Вывод полей --
         - имя класса формы,
         - массив значений[0-класс поля, 1-имя на русском, 2-id, 3-тип, 4-класс иконки,5-значения], 
-        - типы(text,checkbox,textarea,button)
+        - типы(text,checkbox,textarea,button,hidden)
         - тип вывода имени(0-в div-е; 1-в placeholder-е)
     )  
 
@@ -24,7 +24,7 @@ mixin fields-all(className,items,$typeName)
             div(class=`${field[0]} ${className}__${field[0]} ${className}__${field[2]}-box`)
                 if ($typeName === 0)
                     div(class=`${field[0]}__name`) #{field[1]}
-                input(class=`${field[0]}__edit ${field[0]}_${field[2]}` id=`${className}-${field[2]}` name=`${className}-${field[2]}` type="text" placeholder=(($typeName==1) ? `${field[1]}` : ``))
+                input(class=`${field[0]}__edit`+(field[4] ? ` ${field[0]}_${field[4]}` : ``) id=`${className}-${field[2]}` name=`${className}-${field[2]}` type="text" placeholder=(($typeName==1) ? `${field[1]}` : ``))
                 if (field[4])
                     div(class=`${field[0]}__icon icon-${field[4]}`)
         if (field[3] === 'checkbox') 
@@ -44,3 +44,5 @@ mixin fields-all(className,items,$typeName)
         if (field[3] === 'button') 
             div(class=`${className}__${field[2]}-box`)
                 a(class=`${field[0]} ${className}__${field[0]}` id=`${className}-${field[2]}`) #{field[1]}
+        if (field[3] === 'hidden') 
+            input(class=`${field[0]}__edit` hidden id=`${className}-${field[2]}` name=`${className}-${field[2]}` type="text" placeholder=(($typeName==1) ? `${field[1]}` : ``))

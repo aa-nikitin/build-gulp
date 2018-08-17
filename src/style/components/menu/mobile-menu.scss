@@ -1,9 +1,27 @@
 .mobile-menu {
 
-    & .active {
-        & .mobile-menu__link {
-            font-weight: bold;
-            color: $mmenu-color-active;
-        }
+}
+
+.active {
+    & .mobile-menu__link {
+        font-weight: bold;
+        color: $mmenu-color-active;
     }
+
+    & .mobile-menu__sub-link {
+        font-weight: bold;
+        color: $mmenu-color-active;
+    }
+}
+
+.mm-listview>li>a {
+    white-space: normal;
+}
+
+em.mm-counter+a.mm-next {
+    width: 50px;
+}
+
+.mm-menu em.mm-counter {
+    display: none;
 }

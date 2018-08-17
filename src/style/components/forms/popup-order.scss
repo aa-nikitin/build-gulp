@@ -37,6 +37,8 @@ $color-bg : #050b16; //- цвет подложки
         height:80%;
         width:100%;
         max-width:400px;
+        display: flex;
+        align-items: center;
     }
 
     &__box{
@@ -52,7 +54,7 @@ $color-bg : #050b16; //- цвет подложки
 
     &__body{
         overflow-y:auto;  
-        height:100%;  
+        max-height:100%;  
         padding-right: 10px;
         margin-right: -10px;         
     }

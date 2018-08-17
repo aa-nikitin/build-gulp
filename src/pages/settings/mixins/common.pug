@@ -35,7 +35,7 @@ mixin enum-list(className,items,activeLink)
 
 //- -- вывод списка --
         - имя класса, 
-        - перечесление элементов списка в операторе spread
+        - перечесление элементов списка
 
 mixin rest-list(className, items)
     each item in items
@@ -45,7 +45,7 @@ mixin rest-list(className, items)
 
 //- -- хлебные крошки --
         - имя класса, 
-        - перечесление элементов списка в операторе spread
+        - перечесление элементов списка
 
 mixin breadcrumbs(className, items)
     ul(class=`${className}`)
@@ -84,3 +84,22 @@ mixin socials(className,items)
                             span(class=`${className}__icon ${item[0]}`)
                     else    
                         span(class=`${className}__icon ${item[0]}`)
+
+
+
+//- -- Пагинация --
+        - имя класса, 
+        - перечесление страниц(номера например), 
+        - активная страница
+
+mixin pagination(className, items, active)
+    ul(class=`${className}`)
+        li(class=`${className}__control`)
+            a(class=`${className}__control-link` href="#") Предыдущая
+        each item, key in items 
+            li(class=`${className}__item pagination_num` + (( key === active - 1 ) ? ` active` : ''))
+                a(href="#" class=`${className}__link`) #{item}
+        li(class=`${className}__control`)
+            a(class=`${className}__control-link` href="#") Следующая
+
+                        

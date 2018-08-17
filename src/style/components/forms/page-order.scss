@@ -38,7 +38,13 @@ $color-close : #bd063d; //- цвет закрыть
 
     &__button-box {
         width: 30%;
+        padding:0px 5px;
         margin-right: 5%;
+        
+    }
+
+    &__checkbox-box {
+        padding:0px 5px;
     }
    
     &__checkbox {

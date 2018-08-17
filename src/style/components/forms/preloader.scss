@@ -1,0 +1,11 @@
+.preloader{
+    
+    @include centered();
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background:rgba(255,255,255,0.5) url(../img/preloader.gif) center center no-repeat;
+    background-size: 100px;
+    z-index: 999999;
+    display: none;
+}

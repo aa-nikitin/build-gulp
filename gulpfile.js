@@ -14,7 +14,9 @@ global.$ = {
         'sass.build',
         'js.process.build',
         'js.libs',
-        'css.libs'
+        'css.libs',
+        'favicon.generate',
+        'favicon.markups'
     ],
     gulp : require('gulp'),
     del : require('del'),

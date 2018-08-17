@@ -14,7 +14,6 @@ $field-error : #ca0741; //- цвет ошибки
         border-bottom: solid 1px #dedfe0;
         width:100%;
         padding:15px 0px;
-        font-size:16px;
         transition-property: border-color;
         transition-duration: .7s;
         @include PTSans();
@@ -39,7 +38,7 @@ $field-error : #ca0741; //- цвет ошибки
     }
 
     & .error {
-        border-color: $field-error;
+        border-bottom: solid 1px $field-error;
     }
 
 }
