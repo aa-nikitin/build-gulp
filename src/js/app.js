@@ -61,3 +61,4 @@ order(
     'preloader', 'success-message', 'send-order-page'
 );
 
+$(".mask-phone").mask("+7 (999) 999-9999");

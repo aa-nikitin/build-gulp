@@ -5,7 +5,9 @@ $sm : 576px; $md : 768px; $lg : 992px; $xl : 1260px;
 @import "grids/flexgrid.scss";
 //@import "grids/floatgrid.scss";
 
-
+// -- fonts --
+// -- -> ctrl+h -> url(' -> url('/assets/fonts/папка_шрифта/ --
+@import "../fonts/**/*";
 
 // -- settings --
 

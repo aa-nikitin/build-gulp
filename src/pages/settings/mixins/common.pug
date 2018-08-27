@@ -7,13 +7,16 @@
 mixin menu(className,items,activeItem,typeMenu)
     ul(class=className)
         each menu,key in items
-            li(class=`${className}__item`+ ((key===activeItem-1) ? ` active` : ''))
-                a(href=menu[1] class=`${className}__link`) #{menu[0]}
-                if (menu[2]) 
+            if (menu[2]) 
+                li(class=`${className}__item`+ ((key===activeItem-1) ? ` active` : ''))
+                    a(href=menu[1] class=`${className}__link ${className}_arrow`) !{menu[0]}
                     ul(class=`${className}__sub` + ((typeMenu==='h') ? ` container` : ''))
                         each submenu,subkey in menu[2]
                             li(class=`${className}__sub-item`+ ((subkey===activeItem-1) ? ` active` : ''))
-                                a(href=submenu[1] class=`${className}__sub-link`) #{submenu[0]}
+                                a(href=submenu[1] class=`${className}__sub-link`) !{submenu[0]}
+            else 
+                li(class=`${className}__item`+ ((key===activeItem-1) ? ` active` : ''))
+                    a(href=menu[1] class=`${className}__link`) !{menu[0]}
 
 
         
