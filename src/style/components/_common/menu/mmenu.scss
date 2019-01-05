@@ -1,0 +1,14 @@
+.mmenu {
+    display: inline-block;
+    width: 30px;
+
+    &__item {
+        display: block;
+        height: 3px;
+        background: #253a65;
+
+        &:nth-child(2n) {
+            margin: 5px 0px;
+        }
+    }
+}

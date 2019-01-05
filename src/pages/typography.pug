@@ -1,74 +1,81 @@
-extends ./settings/template
+extends ./settings/template/_index
 
 block variables
     - var title = 'Типографика'
     -
-        var gallery = [
-            ['gall.jpg', 'gall.jpg'],
-            ['gall.jpg', 'gall.jpg'],
-            ['gall.jpg', 'gall.jpg'],
-            ['gall.jpg', 'gall.jpg'],
-            ['gall.jpg', 'gall.jpg'],
-            ['gall.jpg', 'gall.jpg']
-        ]
+        var photoGallery = { className: 'gallery', items: [
+            {smallImg: 'gall.jpg', bigImg: 'gall.jpg', name: 'img-1'},
+            {smallImg: 'gall.jpg', bigImg: 'gall.jpg', name: 'img-2'},
+            {smallImg: 'gall.jpg', bigImg: 'gall.jpg', name: 'img-3'}
+        ]}
 
-        var tabel = [
-            ['Что такое Lorem Ipsum?', 'Что такое Lorem Ipsum?',],
-            ['Lorem Ipsum - это текст-"рыба"', 'Lorem Ipsum - это текст-"рыба"'],
-            ['часто используемый', 'часто используемый'],
-            ['в печати и вэб-дизайне', 'в печати и вэб-дизайне']
-        ]
+        var ulList = { className: '', items: [
+                {name: 'маркированный список'},
+                {name: 'маркированный список'},
+                {name: 'маркированный список'},
+                {name: 'маркированный список'},
+                {name: 'маркированный список'},
+                {name: 'маркированный список'}
+            ]
+        }
 
-        var ul_list = [
-            ['маркированный список'],
-            ['маркированный список'],
-            ['маркированный список'],
-            ['маркированный список'],
-            ['маркированный список']
-        ]
+        var olList = { className: '', items: [
+                {name: 'маркированный список', link: ''},
+                {name: 'маркированный список', link: ''},
+                {name: 'маркированный список', link: ''},
+                {name: 'маркированный список', link: ''},
+                {name: 'маркированный список', link: ''},
+                {name: 'маркированный список', link: ''}
+            ]
+        }
 
-        var ol_list = [
-            ['нумированный список'],
-            ['нумированный список'],
-            ['нумированный список'],
-            ['нумированный список'],
-            ['нумированный список']
-        ]
+        var tabel = { className:'', items: [
+            [`value`,`value`],
+            [`value`,`value`]
+        ] }
+
+        
 
 block content
-    .page-wrap
-        .container.content
-            .row
-                .col-xs-3.content__left
-                    +menu("left-menu", left_menu, 2)
-                .col-xs-12.col-lg-9.content__right.typography
-                    +breadcrumbs('breadcrumbs', breadcrumbs)
+    .container.content
+        .row
+            .col-xs-3.col-lg-4.col-xl-3.content__left
+                +menu(leftMenu)
+                
+            .col-xs-12.col-lg-8.col-xl-9.content__right.typography
+                +breadcrumbs(breadcrumbs)
 
-                    h1.page-title-1 Заголовок H1
-                    h2.page-title-2 Заголовок H2
-                    h3.page-title-3 Заголовок H3
-                    h4.page-title-4 Заголовок H4
-                    h5.page-title-5 Заголовок H5
+                h1 Заголовок H1
+                h2 Заголовок H2
+                h3 Заголовок H3
+                h4 Заголовок H4
+                h5 Заголовок H5
 
+                p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.
+                
+                p.info-box Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.
+
+                ul
+                    +list(ulList)
+
+                ol
+                    +list(olList)
+
+                div.gallery.lists-clear
+                    +gallery(photoGallery)
+
+                table
+                    tbody
+                        +table(tabel)
+
+                .page-order
+                    .page-order__head Расчет стоимости перевозки:
+                    form.page-order__form
+                        +form(pageForm)
+
+                +seoText(seoText)
                     p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.
-                    
                     p.info-box Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.
 
+
                     
-                    ul
-                        +rest-list('', ul_list)
-
-                    ol
-                        +rest-list('', ol_list)
-
-                    ul.gallery.lists-clear
-                        +photogallery('gallery', gallery, '')
-
-                    table
-                        tbody
-                            +table(tabel)
-
-                    .page-order
-                        .page-order__head Расчет стоимости перевозки:
-                        form.page-order__form
-                            +fields-all("page-order", page_form, 1)

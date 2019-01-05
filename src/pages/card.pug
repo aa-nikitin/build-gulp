@@ -1,0 +1,36 @@
+extends ./settings/template/_index
+
+block variables
+    - var title = 'Каталог'
+    -
+        var cardPhotos = {classBigPhotos: 'card-big-photos', classSmallPhotos: 'card-small-photos', items: [
+            {smallPhoto: 'card/s-photo-1.jpg', bigPhoto: 'card/big-photo-1.jpg', name: 'photo-1'},
+            {smallPhoto: 'card/s-photo-2.jpg', bigPhoto: 'card/big-photo-1.jpg', name: 'photo-2'},
+            {smallPhoto: 'card/s-photo-3.jpg', bigPhoto: 'card/big-photo-1.jpg', name: 'photo-3'},
+            {smallPhoto: 'card/s-photo-4.jpg', bigPhoto: 'card/big-photo-1.jpg', name: 'photo-4'},
+            {smallPhoto: 'card/s-photo-5.jpg', bigPhoto: 'card/big-photo-1.jpg', name: 'photo-5'},
+            {smallPhoto: 'card/s-photo-1.jpg', bigPhoto: 'card/big-photo-1.jpg', name: 'photo-6'},
+            {smallPhoto: 'card/s-photo-2.jpg', bigPhoto: 'card/big-photo-1.jpg', name: 'photo-7'},
+            {smallPhoto: 'card/s-photo-3.jpg', bigPhoto: 'card/big-photo-1.jpg', name: 'photo-8'}
+        ]}
+
+block content
+    .container.content
+        .row
+            .col-xs-3.col-lg-4.col-xl-3.content__left
+                +menu(leftMenu)
+            .col-xs-12.col-lg-8.col-xl-9.content__right
+                +breadcrumbs(breadcrumbs)
+
+                h1.content-title Заголовок H1
+
+                .row.card
+                    .col-xs-12.col-sm-5.card__left  
+                        +card-photos(cardPhotos) 
+                    .col-xs-12.col-sm-7.card__right.typography
+                        p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.
+                
+
+
+
+        

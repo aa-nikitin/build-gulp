@@ -1,58 +1,99 @@
 -
+    //- menu
+
     var menu = [
-        ['Главная', '/'],
-        ['Категории', 'category.html'],
-        ['Типографика', 'typography.html'],
-        ['Каталог', 'catalog.html'],
-        ['Товар', 'product.html'],
-        ['Пункт', '#']
+        { name: 'Пункт 1', link: '#', subMenu: [
+            { name: 'Под-пункт 1', link: '#', classActive: 'active'},
+            { name: 'Под-пункт 2', link: '#'},
+            { name: 'Под-пункт 3', link: '#'},
+            { name: 'Под-пункт 4', link: '#'},
+            { name: 'Под-пункт 5', link: '#'}
+        ]},
+        { name: 'Пункт 2', link: '#', classActive: 'active'},
+        { name: 'Пункт 3', link: '#'},
+        { name: 'Пункт 4', link: '#'},
+        { name: 'Пункт 5', link: '#'}
     ]
 
-    var left_menu = [
-        ['Категория 1', '#', [
-            ['Подкатегория 1', '#'],
-            ['Подкатегория 2', '#'],
-            ['Подкатегория 3', '#'],
-            ['Подкатегория 4', '#']   
-        ]],
-        ['Категория 2', '#'],
-        ['Категория 3', '#'],
-        ['Категория 4', '#'],
-        ['Категория 5', '#']
-    ]
+    var topMenu = { className: 'top-menu', items: menu, levels: 2 }
+    var mobileMenu = { className: 'mobile-menu', items: menu }
+    var footerMenu = { className: 'footer-menu', items: menu }
 
-    var breadcrumbs = [
-        ['Главная', '/'],
-        ['Хлебные крошки', '#'],
-        ['Текущая страница', '']
-    ]
+    var leftMenu = { className: 'left-menu', items: [
+        { name: 'Категория 1', link: '#', subMenu: [
+            { name: 'Подкатегория 1', link: '#', classActive: 'active' },
+            { name: 'Подкатегория 2', link: '#' },
+            { name: 'Подкатегория 3', link: '#' },
+            { name: 'Подкатегория 4', link: '#' }
+        ]},
+        { name: 'Категория 2', link: '#', classActive: 'active' },
+        { name: 'Категория 3', link: '#' },
+        { name: 'Категория 4', link: '#' },
+        { name: 'Категория 5', link: '#' }
+    ], levels: 2 }
 
-    var main_slider = [
-        ['./assets/img/files/slide-1.jpg','#link1'],
-        ['slider-2.jpg',''],
-        ['slider-3.jpg','#link3']
-    ]
 
-    var poup_form = [
-        ['form-field','Представьтесь:','name','text',''],
-        ['form-field','Контактный телефон:','phone','text','','','mask-phone'],
-        ['form-field','Сообщение:','massage','textarea',''],
-        ['checkbox','Я прочитал и согласен с правилами <a target="_blank" href="#">Политика конфиденциальности</a>','checkbox','checkbox','','yes'],
-        ['button','Заказать','button','button',''],
-        ['field-hidden','','page','hidden','']
-    ]
 
-    var page_form = [
-        ['form-field','Представьтесь:','name','text',''],
-        ['form-field','Контактный телефон:','phone','text','phone','','mask-phone'],
-        ['form-field','Сообщение:','massage','textarea',''],
-        ['button','Рассчитать стоимость','button','button',''],
-        ['checkbox','Я прочитал и согласен с правилами <a target="_blank" href="#">Политика конфиденциальности</a>','checkbox','checkbox','','yes'],
-        ['field-hidden','','page','hidden','']
-    ]
+    //- breadcrumbs
 
-    var socials = [
-        ['icon icon-vk','#vk'],
-        ['icon icon-fb','#fb'],
-        ['icon icon-ins','#ins']
-    ]
+    var breadcrumbs = { className: 'breadcrumbs', items: [
+        { name: 'Главная', link: '/' },
+        { name: 'Хлебные крошки', link: '/#' },
+        { name: 'Текущая страница', link: '' }
+    ] }
+
+
+
+    //- pagination
+
+    var pagination = { className: 'pagination', items: [
+        {name: 1, link: '#'},
+        {name: 2, link: '#', classActive: 'active'},
+        {name: 3, link: '#'},
+        {name: 4, link: '#'}
+    ] }
+
+
+
+    //- socials
+
+    var socials = { className: 'socials', items: [
+        { icon: 'icon icon-vk', link: '#vk'},
+        { icon: 'icon icon-fb', link: '#fb'},
+        { icon: 'icon icon-ins', link: '#ins'}
+    ] }
+
+
+
+    //- seo text
+
+    var seoText = {className:'seo-text', name: 'Дополнительная информация'}
+
+
+
+    //- forms
+
+    var pageForm = {className: 'page-order', items: [
+        { type: 'text', typeClass: 'form-field', caption: 'Представьтесь:', name: 'name', typeName: 1 },
+        { type: 'text', typeClass: 'form-field', caption: 'Контактный телефон:', name: 'phone', iconName: 'icon-phone', maskClass: 'mask-phone', typeName: 1 },
+        { type: 'textarea', typeClass: 'form-field', caption: 'Сообщение:', name: 'message', typeName: 1 },
+        { type: 'button', typeClass: 'button', caption: 'Заказать', name: 'button' },
+        { type: 'checkbox', typeClass: 'checkbox', caption: 'Я прочитал и согласен с правилами <a target="_blank" href="#">Политика конфиденциальности</a>', name: 'checkbox', dataValue: 'yes' },
+        { type: 'hidden', typeClass: 'field-hidden', name: 'page' }
+    ] }
+
+    var poupForm = {className: 'popup-order', items: [
+        { type: 'text', typeClass: 'form-field', caption: 'Представьтесь:', name: 'name', typeName: 1 },
+        { type: 'text', typeClass: 'form-field', caption: 'Контактный телефон:', name: 'phone', maskClass: 'mask-phone', typeName: 1 },
+        { type: 'textarea', typeClass: 'form-field', caption: 'Сообщение:', name: 'message', typeName: 1 },
+        { type: 'checkbox', typeClass: 'checkbox', caption: 'Я прочитал и согласен с правилами <a target="_blank" href="#">Политика конфиденциальности</a>', name: 'checkbox', dataValue: 'yes' },
+        { type: 'button', typeClass: 'button', caption: 'Заказать', name: 'button' },
+        { type: 'hidden', typeClass: 'field-hidden', name: 'page' }
+    ] }
+
+
+    
+
+    
+
+    

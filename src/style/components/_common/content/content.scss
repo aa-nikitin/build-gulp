@@ -1,0 +1,22 @@
+.content {
+    padding-top: 30px;
+    padding-bottom: 40px;
+
+    &__left {
+    }
+
+    &__right {
+    }
+}
+
+.content {
+    @include lg() {
+        margin-top: 0px;
+    }
+
+    &__left {
+        @include lg() {
+            display: none;
+        }
+    }
+}

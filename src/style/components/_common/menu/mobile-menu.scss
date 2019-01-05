@@ -1,0 +1,26 @@
+.mobile-menu {
+}
+
+.active {
+    & .mobile-menu__link {
+        font-weight: bold;
+        color: #253a65;
+    }
+
+    & .mobile-menu__sub-link {
+        font-weight: bold;
+        color: #253a65;
+    }
+}
+
+.mm-listview > li > a {
+    white-space: normal;
+}
+
+em.mm-counter + a.mm-next {
+    width: 50px;
+}
+
+.mm-menu em.mm-counter {
+    display: none;
+}

@@ -1,0 +1,9 @@
+.top-menu-header {
+    background: #314b7e;
+}
+
+.top-menu-header {
+    @include lg() {
+        display: none;
+    }
+}

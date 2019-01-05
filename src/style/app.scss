@@ -1,28 +1,23 @@
 // -- grids --
 
-$sm : 576px; $md : 768px; $lg : 992px; $xl : 1260px;
+$xs: 420px;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1260px;
 
-@import "grids/flexgrid.scss";
-//@import "grids/floatgrid.scss";
+@import 'settings/grids/flexgrid.scss';
+//@import "settings/grids/floatgrid.scss";
 
 // -- fonts --
-// -- -> ctrl+h -> url(' -> url('/assets/fonts/папка_шрифта/ --
-@import "../fonts/**/*";
+
+@import '../fonts/**/*';
 
 // -- settings --
 
-@import "settings/colors.scss";
-@import "settings/mixins.scss";
-@import "settings/fonts.scss";
-@import "settings/base.scss";
-@import "settings/typography.scss";
+@import 'settings/mixins.scss';
+@import 'settings/fonts.scss';
+@import 'settings/base.scss';
 
-
-
-// -- components -- 
-@import "components/**/*";
-
-
-
-
-
+// -- components --
+@import 'components/**/*';

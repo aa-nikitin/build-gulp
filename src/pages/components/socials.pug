@@ -1,0 +1,13 @@
+mixin socials(obj)
+    ul(class=`${obj.className}`)
+        each item, key in obj.items
+            +socials-item(obj.className, item)
+
+mixin socials-item(cl, i)
+    li(class=`${cl}__item`) 
+        if (i.icon)
+            if (i.link)
+                a(class=`${cl}__link` href=`${i.link}`)
+                    span(class=`${cl}__icon ${i.icon}`)
+            else    
+                span(class=`${cl}__icon ${i.icon}`)

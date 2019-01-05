@@ -1,0 +1,67 @@
+// -- lists --
+
+.typography {
+    & .list {
+        margin: 20px 0px;
+        & li {
+            position: relative;
+            padding-left: 15px;
+            margin: 2px 0px;
+            line-height: 1.5;
+            &:before {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 11px;
+                left: 0px;
+                width: 5px;
+                height: 5px;
+                background: #314b7e;
+                border-radius: 40px;
+            }
+        }
+    }
+
+    & .list-number {
+        list-style-type: none;
+        counter-reset: num;
+        padding-left: 0px;
+        margin: 20px 0px;
+        line-height: 1.5;
+        & li {
+            margin: 2px 0px;
+            &:before {
+                content: counter(num) '. '; /* Выводим число */
+                counter-increment: num; /* Увеличиваем значение счётчика */
+                color: #314b7e;
+                font-weight: bold;
+                font-style: italic;
+            }
+        }
+    }
+
+    & ul:not([class]) {
+        @extend .list;
+    }
+
+    & ol:not([class]) {
+        @extend .list-number;
+    }
+
+    & p {
+        line-height: 1.5;
+        margin: 15px 0px;
+
+        &:first-child {
+            margin-top: 0px;
+        }
+    }
+}
+
+// -- info-box --
+
+.info-box {
+    padding: 15px 25px;
+    border-left: solid 4px #314b7e;
+    background: #fff;
+}

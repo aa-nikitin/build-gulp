@@ -1,34 +1,33 @@
-extends ./settings/template
+extends ./settings/template/_index
 
 block variables
     - var title = 'Каталог'
     -
-        var catalog = [
-            ['cat-1.jpg', 'Подкатегория 1 <br> dop', '#'],
-            ['cat-2.jpg', 'Подкатегория 2', '#'],
-            ['cat-3.jpg', 'Подкатегория 3', '#'],
-            ['cat-4.jpg', 'Подкатегория 4', '#'],
-            ['cat-4.jpg', 'Подкатегория 5', '#'],
-            ['cat-3.jpg', 'Подкатегория 6', '#'],
-            ['cat-2.jpg', 'Подкатегория 7', '#'],
-            ['cat-1.jpg', 'Подкатегория 8', '#']
-        ]
+        var category = { className: 'category', classItem: 'category-item', items: [
+            { image: 'cat-1.jpg', name: 'Подкатегория 1 <br> dop', link: '#' },
+            { image: 'cat-2.jpg', name: 'Подкатегория 2', link: '#' },
+            { image: 'cat-3.jpg', name: 'Подкатегория 3', link: '#' },
+            { image: 'cat-4.jpg', name: 'Подкатегория 4', link: '#' },
+            { image: 'cat-1.jpg', name: 'Подкатегория 1 <br> dop', link: '#' },
+            { image: 'cat-2.jpg', name: 'Подкатегория 2', link: '#' },
+            { image: 'cat-3.jpg', name: 'Подкатегория 3', link: '#' },
+            { image: 'cat-4.jpg', name: 'Подкатегория 4', link: '#' }
+        ] }
 
 block content
-    .page-wrap
-        .container.content
-            .row
-                .col-xs-3.content__left
-                    +menu("left-menu", left_menu, 2)
-                .col-xs-12.col-lg-9.content__right
-                    +breadcrumbs('breadcrumbs', breadcrumbs)
+    .container.content
+        .row
+            .col-xs-3.col-lg-4.col-xl-3.content__left
+                +menu(leftMenu)
+            .col-xs-12.col-lg-8.col-xl-9.content__right
+                +breadcrumbs(breadcrumbs)
 
-                    h1.page-title-1 Заголовок H1
+                h1.content-title Заголовок H1
 
-                    .catalog
-                        +category('catalog__item', 'catalog-item', catalog) 
+                .category
+                    +category(category) 
 
-                    +pagination('pagination', [1, 2, 3, 4], 1)    
+                +pagination(pagination) 
 
 
         

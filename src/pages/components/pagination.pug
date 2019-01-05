@@ -1,0 +1,21 @@
+//- .className - класс
+//- .items - массив элементов 
+
+mixin pagination(obj)
+    ul(class=`${obj.className}`)
+        li(class=`${obj.className}__control`)
+            a(class=`${obj.className}__control-link` href="#") Предыдущая
+        each item, key in obj.items
+            +pagination-item(obj.className, item)
+        li(class=`${obj.className}__control`)
+            a(class=`${obj.className}__control-link` href="#") Следующая
+
+
+
+//- .name - значение(имя)
+//- .link - ссылка 
+//- .classActive - сласс активного пункта элемента
+
+mixin pagination-item(cl, i)
+    li(class=`${cl}__item ${cl}_num` + ((i.classActive) ? ` ${i.classActive}` : ''))
+        a(href=`${i.link}` class=`${cl}__link`) !{i.name}

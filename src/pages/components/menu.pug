@@ -1,0 +1,36 @@
+//- .className - класс
+//- .items - массив элементов 
+//- .levels - количество уровней меню (целое)
+
+mixin menu(obj)  
+    ul(class = obj.className)
+        each item, key in obj.items 
+            +menu-item(obj.className, item, obj.levels) 
+
+
+
+//- .name - пункт меню(имя)
+//- .link - ссылка 
+//- .subMenu - подменю (массив)
+//- .classActive - сласс активного пункта меню
+
+mixin menu-item(cl, i, lvl) 
+    if (i.subMenu && lvl > 1) 
+        li(class=`${cl}__item`+ ((i.classActive) ? ` ${i.classActive}` : ''))
+            a(href=i.link class=`${cl}__link ${cl}_arrow`) !{i.name}
+            ul(class = `${cl}__sub`)
+                each item in i.subMenu
+                    +menu-sub-item(cl, item)
+    else 
+        li(class = `${cl}__item` + ((i.classActive) ? ` ${i.classActive}` : ''))
+            a(href = i.link class = `${cl}__link`) !{i.name}
+
+
+
+//- .name - пункт меню(имя)
+//- .link - ссылка 
+//- .classActive - сласс активного пункта меню
+
+mixin menu-sub-item(cl, i) 
+    li(class = `${cl}__item` + ((i.classActive) ? ` ${i.classActive}` : ''))
+        a(href = i.link class=`${cl}__sub-link`) !{i.name}

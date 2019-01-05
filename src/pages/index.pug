@@ -1,75 +1,25 @@
-extends ./settings/template
+include ./settings/template/_include
 
-block variables
-    - var title = 'Главная'
-    -
-        var slider = [
-            ['slide-1.jpg', '#'],
-            ['slide-2.jpg', ''],
-            ['slide-3.jpg', '']
+-
+    var pages = { className: '', items: [
+            {name: 'Главная', link: '/main.html'},
+            {name: 'Карточка', link: '/card.html'},
+            {name: 'Категории', link: '/category.html'},
+            {name: 'Типографика (текстовая)', link: '/typography.html'}
         ]
+    }
 
-        var category = [
-            ['cat-1.jpg', 'Подкатегория 1 <br> dop', '#'],
-            ['cat-2.jpg', 'Подкатегория 2', '#'],
-            ['cat-3.jpg', 'Подкатегория 3', '#'],
-            ['cat-4.jpg', 'Подкатегория 4', '#'],
-            ['cat-4.jpg', 'Подкатегория 5', '#'],
-            ['cat-3.jpg', 'Подкатегория 6', '#'],
-            ['cat-2.jpg', 'Подкатегория 7', '#'],
-            ['cat-1.jpg', 'Подкатегория 8', '#']
-        ]
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        meta(content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport")
+        meta(content="ie=edge" http-equiv="x-ua-compatible")
 
-        var product_item = [
-            ['prod-1.jpg', 'Трал NOOTEBOOM', 'Масса перевозимого груза (в тоннах): до 39 тонн Минимальный заказ: 8 часов', 'от 50 руб./км', '#'],
-            ['prod-2.jpg', 'Трал NOOTEBOOM', 'Масса перевозимого груза (в тоннах): до 39 тонн Минимальный заказ: 8 часов', 'от 50 руб./км', '#'],
-            ['prod-3.jpg', 'Трал NOOTEBOOM', 'Масса перевозимого груза (в тоннах): до 39 тонн Минимальный заказ: 8 часов', 'от 50 руб./км', '#'],
-            ['prod-1.jpg', 'Трал NOOTEBOOM', 'Масса перевозимого груза (в тоннах): до 39 тонн Минимальный заказ: 8 часов', 'от 50 руб./км', '#'],
-            ['prod-2.jpg', 'Трал NOOTEBOOM', 'Масса перевозимого груза (в тоннах): до 39 тонн Минимальный заказ: 8 часов', 'от 50 руб./км', '#'],
-            ['prod-3.jpg', 'Трал NOOTEBOOM', 'Масса перевозимого груза (в тоннах): до 39 тонн Минимальный заказ: 8 часов', 'от 50 руб./км', '#'],
-            ['prod-1.jpg', 'Трал NOOTEBOOM', 'Масса перевозимого груза (в тоннах): до 39 тонн Минимальный заказ: 8 часов', 'от 50 руб./км', '#']
-        ]
+        link(rel="stylesheet", href="./assets/css/app.css")
 
-        var gallery = [
-            ['gall.jpg', 'gall.jpg'],
-            ['gall.jpg', 'gall.jpg'],
-            ['gall.jpg', 'gall.jpg'],
-            ['gall.jpg', 'gall.jpg'],
-            ['gall.jpg', 'gall.jpg'],
-            ['gall.jpg', 'gall.jpg'],
-            ['gall.jpg', 'gall.jpg'],
-            ['gall.jpg', 'gall.jpg'],
-            ['gall.jpg', 'gall.jpg'],
-            ['gall.jpg', 'gall.jpg'],
-            ['gall.jpg', 'gall.jpg'],
-            ['gall.jpg', 'gall.jpg'],
-            ['gall.jpg', 'gall.jpg'],
-            ['gall.jpg', 'gall.jpg']
-        ]
+    body
+        .container.content.typography
+            ul
+                +list(pages)
 
-block content
-
-    .container.content
-
-        .flexslider.main-slider
-            ul.slides
-                +slider('main-slider', slider) 
-
-        h2.page-title-2.page-title_center
-            |Заголовок H2
-        
-        .category
-            +category('category__item', 'category-item', category) 
-
-        h2.page-title-2.page-title_center
-            |Заголовок H2
-
-        .flexslider.main-products
-            ul.slides
-                +products-slider('main-products', 'product-item', product_item) 
-
-        h2.page-title-2.page-title_center
-            |Заголовок H2
-
-        ul.main-gallery
-            +photogallery('main-gallery', gallery, '')

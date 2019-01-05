@@ -1,0 +1,20 @@
+//- .className - класс списка(категории)
+//- .classItem - класс элемента(итема)
+//- .items - массив элементов 
+
+mixin category(obj)
+    each item, key in obj.items
+        div(class=`${obj.className}__item`)
+            +category-item(obj.classItem, item)
+
+
+
+//- .name - значение(имя)
+//- .link - ссылка 
+//- .image - путь к изображению
+
+mixin category-item(cl, i)
+    div(class=`${cl}`)
+        a(href=`${i.link}` class=`${cl}__img`)
+            img(class=`${cl}__photo` src=`${config.pathImg}/${i.image}`, alt=`${i.name}`)
+        a(class=`${cl}__name` href=`${i.link}`) !{i.name}

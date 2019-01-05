@@ -1,63 +1,85 @@
-.main-products {
-    margin-bottom: 40px;
+.main-category {
+    padding: 0px 30px;
+    margin: 0px -35px 40px -35px;
     border: 0px;
     background: transparent;
+
+    &:hover {
+        & .slick-arrow {
+            opacity: 1;
+        }
+    }
+    & .slick-track {
+        align-items: stretch;
+    }
     &__item {
-        margin-right: 30px;
-        
+        padding: 0px 5px;
+        align-items: stretch;
     }
-
-    & .flex-control-nav {
-        display: none;
+    & .slick-slide {
+        display: block;
     }
-
-    & .flex-viewport {
-        padding: 10px;
-        margin-left: -10px;
-        margin-right: -10px;
-        @include xl() {
-            margin-left: -2px;
-            margin-right: -2px;  
-            padding: 2px;  
-        };
-    }
-
-    & .flex-direction-nav .flex-prev {
-        opacity: 1;
-        left: -40px;
-    }
-
-    & .flex-direction-nav .flex-next {
-        opacity: 1;
-        right: -40px;
-    }
-
-    &:hover .flex-direction-nav .flex-prev {
-        opacity: 1;
-        left: -40px;
-    }
-
-    &:hover .flex-direction-nav .flex-next {
-        opacity: 1;
-        right: -40px;
-    }
-
-    & .flex-direction-nav a {
-        opacity: 1;
-        color: #314b7e;
-        width: auto; 
-        height: auto;
-        margin: 0;
-        font-size: 0px;
+    & .slick-arrow {
         @include centered(y);
-        &:before {
-            font-size: 50px;
+        width: 20px;
+        height: 38px;
+        border: none;
+        z-index: 2;
+        font-size: 0px;
+        cursor: pointer;
+        outline: none;
+        background: transparent;
+        opacity: 0;
+        transition-property: all;
+        transition-duration: 0.7s;
+        &:hover {
+            &:after {
+                color: #253a65;
+                // background: url('../img/s-act-arrow.png') center center
+                //     no-repeat;
+            }
+        }
+        &:after {
+            content: '';
+            @include FontAwesome();
+            font-size: 40px;
+            color: #ccc;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+            // background: url('../img/s-arrow.png') center center no-repeat;
+            transition-property: all;
+            transition-duration: 0.7s;
+            display: block;
         }
     }
 
-    @include lg() {
-        & .flex-direction-nav {
-            display: none;
+    & .slick-prev {
+        left: 0px;
+        &:after {
+            content: '\f104';
         }
-    };
+    }
+
+    & .slick-next {
+        right: 0px;
+        &:after {
+            content: '\f105';
+        }
+    }
+}
+
+.main-category {
+    @include md() {
+        padding: 0px 0px;
+        margin: 0px -5px 40px -5px;
+    }
+
+    & .slick-arrow {
+        @include md() {
+            display: none !important;
+        }
+    }
 }

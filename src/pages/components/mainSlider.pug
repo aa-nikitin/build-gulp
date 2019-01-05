@@ -1,0 +1,11 @@
+mixin mainSlider(obj)
+    each item, key in obj.items
+        +mainSlider-item(obj.className, item)
+
+mixin mainSlider-item(cl, i)
+    div(class=`${cl}__item`)
+        if (i.link) 
+            a(href=`${i.link}` class=`${cl}__link`)
+                img(class=`${cl}__img` src=`${config.pathImg}/${i.image}`, alt=`${i.name}`)
+        else
+            img(class=`${cl}__img` src=`${config.pathImg}/${i.image}`, alt=`${i.name}`)

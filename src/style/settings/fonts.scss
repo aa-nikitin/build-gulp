@@ -1,34 +1,28 @@
 //@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700|Roboto+Slab:400,700&subset=cyrillic');
 
-
+// -- -> ctrl+h -> url(' -> url('/assets/fonts/папка_шрифта/ --
 
 // -- FontAwesome --
 
 @font-face {
     font-family: 'FontAwesome';
-    src : url('/assets/fonts/fontawesome-webfont.woff?v=4.6.3') format('woff');
+    src: url('/assets/fonts/fontawesome-webfont.woff?v=4.6.3') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
-@mixin FontAwesome ($f-weight: '400') {
+@mixin FontAwesome() {
     font-family: 'FontAwesome';
 }
 
-
-
 // -- PTSans --
 
-@mixin PTSans ($f-weight: '400') {
+@mixin PTSans() {
     font-family: 'PT Sans', sans-serif;
-    font-weight: $f-weight;
 }
-
-
 
 // -- OpenSans --
 
-@mixin OpenSans ($f-weight: '400') {
+@mixin OpenSans() {
     font-family: 'Open Sans', serif;
-    font-weight: $f-weight;
 }

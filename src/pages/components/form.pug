@@ -1,0 +1,59 @@
+//- .className - класс
+//- .items - массив элементов 
+
+mixin form(obj)
+    each item, key in obj.items 
+        case item.type
+            when 'text'
+                +text-field(obj.className, item)
+            when 'textarea'
+                +textarea(obj.className, item)
+            when 'checkbox'
+                +checkbox(obj.className, item)
+            when 'button'
+                +button(obj.className, item)
+            when 'hidden'
+                +hidden(obj.className, item)
+
+
+
+//- .type - тип поля (checkbox, button и т.д.)
+//- .typeClass - класс для типа 
+//- .caption - заголовок
+//- .name - имя поля
+//- .typeName - тип имени поля(где отображать - 0: над полем, 1: в placeholder'e)
+//- .iconName - класс иконки для поля
+//- .maskClass - доп класс например для маски телефона
+//- .dataValue - значение в data-value для checkbox
+
+mixin text-field(cl, i) 
+    div(class=`${i.typeClass} ${cl}__${i.typeClass} ${cl}__${i.name}-box`)
+        if (i.typeName === 0)
+            div(class=`${i.typeClass}__name`) !{i.caption}
+        input(class=`${i.typeClass}__edit` + (i.iconName ? ` ${i.typeClass}_${i.iconName}` : ``) + (i.maskClass ? ` ${i.maskClass}` : ``) id=`${cl}-${i.name}` name=`${cl}-${i.name}` type="text" placeholder=((i.typeName===1) ? `${i.caption}` : ``))
+        if (i.iconName)
+            div(class=`${i.typeClass}__icon ${i.iconName}`)
+
+mixin textarea(cl, i) 
+    div(class=`${i.typeClass} ${cl}__${i.typeClass} ${cl}__${i.name}-box`)
+        if (i.typeName === 0)
+            div(class=`${i.typeClass}__name`) !{i.caption}
+        textarea(class=`${i.typeClass}__edit` + (i.iconName ? ` ${i.typeClass}_${i.iconName}` : ``) + (i.maskClass ? ` ${i.maskClass}` : ``) id=`${cl}-${i.name}` name=`${cl}-${i.name}` type="text" placeholder=((i.typeName===1) ? `${i.caption}` : ``))
+        if (i.iconName)
+            div(class=`${i.typeClass}__icon ${i.iconName}`)
+
+mixin checkbox(cl, i) 
+    div(class=`${i.typeClass} ${cl}__${i.typeClass} ${cl}__${i.name}-box`)
+        label(class=`${i.typeClass}` + (i.maskClass ? ` ${i.maskClass}` : ``))
+            input(id=`${cl}-${i.name}` data-value=`${i.dataValue}` class=`${i.typeClass}__input` type=`checkbox` name=`${cl}-${i.name}`)
+            span(class=`${i.typeClass}__custom`)
+            span(class=`${i.typeClass}__label`) 
+                |!{i.caption}
+
+mixin button(cl, i) 
+    div(class=`${cl}__${i.name}-box`)
+        a(class=`${i.typeClass} ${cl}__${i.typeClass}` + (i.maskClass ? ` ${i.maskClass}` : ``) id=`${cl}-${i.name}`) #{i.caption}
+
+mixin hidden(cl, i) 
+    input(class=`${i.typeClass}__edit` id=`${cl}-${i.name}` name=`${cl}-${i.name}` hidden type="hidden" value=``)
+

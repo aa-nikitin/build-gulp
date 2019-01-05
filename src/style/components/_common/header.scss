@@ -1,0 +1,41 @@
+.header {
+    padding: 15px 0px;
+    background: #ffffff;
+
+    &__row {
+        align-items: center;
+    }
+
+    &__info {
+        text-align: center;
+    }
+
+    &__order {
+    }
+
+    &__mmenu {
+        display: none;
+    }
+}
+
+.header {
+    &__info {
+        @include lg() {
+            display: none;
+        }
+    }
+
+    &__order {
+        @include lg() {
+            display: none;
+        }
+    }
+
+    &__mmenu {
+        @include lg() {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+    }
+}

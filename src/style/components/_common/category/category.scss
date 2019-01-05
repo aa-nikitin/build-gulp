@@ -1,0 +1,24 @@
+.category {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    margin-left: -5px;
+    margin-right: -5px;
+    &__item {
+        display: flex;
+        width: 25%;
+        padding: 5px;
+    }
+}
+
+.category {
+    &__item {
+        @include lg() {
+            width: 33.33%;
+        }
+
+        @include md() {
+            width: 50%;
+        }
+    }
+}

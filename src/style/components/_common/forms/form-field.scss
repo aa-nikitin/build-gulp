@@ -1,0 +1,42 @@
+.form-field {
+    &__edit {
+        border: 1px solid transparent;
+        outline: none;
+        background: #fff;
+        border-bottom: solid 1px #dedfe0;
+        width: 100%;
+        padding: 15px 0px;
+        transition-property: border-color;
+        transition-duration: 0.7s;
+        @include PTSans();
+        resize: none;
+        &:focus {
+            border-bottom: solid 1px #314b7e;
+        }
+    }
+
+    &__name {
+        font-size: 14px;
+        margin-bottom: 7px;
+    }
+
+    &__icon {
+        position: absolute;
+        @include centered(y);
+        &.icon-phone {
+            left: 20px;
+        }
+    }
+
+    &_icon-phone {
+        padding-left: 40px;
+    }
+
+    & .error {
+        border-bottom: solid 1px #ca0741;
+    }
+}
+
+@include placeholder('form-field__edit', #474747);
+
+@include placeholder('form-field__edit.error', #ca0741);

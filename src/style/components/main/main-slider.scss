@@ -2,13 +2,42 @@
     border: 0px;
     margin-bottom: 40px;
 
-    & .flex-direction-nav {
-        display: none;
+    & .slick-dots {
+        display: flex;
+        @include centered(x);
+        bottom: 30px;
+        & li {
+            margin-right: 10px;
+            display: block;
+            & button {
+                background: #fff;
+                border: none;
+                font-size: 0px;
+                padding: 0px;
+                width: 10px;
+                height: 10px;
+                display: block;
+                border-radius: 50px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+                outline: none;
+                cursor: pointer;
+                transition-property: all;
+                transition-duration: 0.7s;
+            }
+            &.slick-active {
+                & button {
+                    background-color: #0c0074;
+                    box-shadow: none;
+                }
+            }
+        }
     }
+}
 
-    @include lg() {
-        & .flex-control-nav {
-            display: none;
+.main-slider {
+    & .slick-dots {
+        @include md() {
+            display: none !important;
         }
     }
 }

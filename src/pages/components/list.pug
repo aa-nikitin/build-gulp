@@ -1,0 +1,19 @@
+//- .className - класс
+//- .items - массив элементов 
+
+mixin list(obj)
+    each item, key in obj.items 
+        +list-item(obj.className, item)
+
+
+
+//- .name - значение(имя)
+//- .link - ссылка 
+
+mixin list-item(cl, i) 
+    if (i.link) 
+        li(class = ((cl) ? ` ${cl}__item` : ''))
+            a(href = `${i.link}` class = ((cl) ? ` ${cl}__link` : '')) !{i.name}
+    else
+        li(class = ((cl) ? ` ${cl}__item` : '')) !{i.name}
+         

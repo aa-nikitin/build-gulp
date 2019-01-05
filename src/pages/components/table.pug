@@ -1,0 +1,10 @@
+//- входные параметры - массив
+//- [
+      ['value','value'],
+      ['value','value']
+    ]
+mixin table(obj)   
+    each item_tr, key_tr in obj.items 
+        tr(class = ((obj.className) ? ` ${obj.className}__row` : ''))
+            each item_td, key_td in item_tr 
+                td(class = ((obj.className) ? ` ${obj.className}__col` : '')) !{item_td}

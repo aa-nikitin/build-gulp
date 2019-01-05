@@ -1,0 +1,17 @@
+//- .className - класс
+//- .items - массив элементов 
+
+mixin gallery(obj) 
+    each item, key in obj.items 
+        +gallery-item(obj.className, item) 
+
+
+
+//- .name - значение(имя)
+//- .bigImg - путь к большой картинке 
+//- .smallImg - путь к маленькой картинке 
+
+mixin gallery-item(cl, i) 
+    div(class = `${cl}__item`)
+        a(class = `${cl}__link` href = `${config.pathImg}/${i.bigImg}` data-fancybox = `${cl}` title = `${i.name}`)
+            img(class = `${cl}__img` src = `${config.pathImg}/${i.smallImg}`, alt = `${i.name}`)

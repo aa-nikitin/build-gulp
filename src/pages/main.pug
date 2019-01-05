@@ -1,0 +1,52 @@
+extends ./settings/template/_index
+
+block variables
+    - var title = 'Главная'
+    -
+        var mainSlider = { className: 'main-slider', items: [
+            { image: 'slide-1.jpg', name: 'slide-1', link: '' },
+            { image: 'slide-2.jpg', name: 'slide-2', link: '#' },
+            { image: 'slide-3.jpg', name: 'slide-3', link: '#' },
+            { image: 'slide-1.jpg', name: 'slide-1', link: '#' },
+            { image: 'slide-2.jpg', name: 'slide-2', link: '#' },
+            { image: 'slide-3.jpg', name: 'slide-3', link: '#' },
+            { image: 'slide-1.jpg', name: 'slide-1', link: '#' },
+            { image: 'slide-2.jpg', name: 'slide-2', link: '#' }
+        ] }
+
+        var categoryItems = [
+            { image: 'cat-1.jpg', name: 'Подкатегория 1 <br> dop', link: '#' },
+            { image: 'cat-2.jpg', name: 'Подкатегория 2', link: '#' },
+            { image: 'cat-3.jpg', name: 'Подкатегория 3', link: '#' },
+            { image: 'cat-4.jpg', name: 'Подкатегория 4', link: '#' },
+            { image: 'cat-1.jpg', name: 'Подкатегория 1 <br> dop', link: '#' },
+            { image: 'cat-2.jpg', name: 'Подкатегория 2', link: '#' },
+            { image: 'cat-3.jpg', name: 'Подкатегория 3', link: '#' },
+            { image: 'cat-4.jpg', name: 'Подкатегория 4', link: '#' }
+        ]
+
+        var category = { className: 'category', classItem: 'category-item', items: categoryItems }
+
+        var prodSlider = { className: 'main-category', classItem: 'category-item', items: categoryItems }
+
+
+block content
+
+    .container.content
+
+        .main-slider
+            +mainSlider(mainSlider)
+
+        h2.content-title.content-title_center
+            |Заголовок H2
+        
+        .category
+            +category(category) 
+
+        h2.content-title.content-title_center
+            |Заголовок H2
+
+        .main-category
+            +category(prodSlider) 
+
+

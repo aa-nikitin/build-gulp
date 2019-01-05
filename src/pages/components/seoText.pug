@@ -1,0 +1,6 @@
+mixin seoText(obj)
+    if block
+        div(class=`${obj.className}`)
+            div(class=`${obj.className}__head`) !{obj.name}
+            div(class=`${obj.className}__body typography`)
+                block

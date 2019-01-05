@@ -1,0 +1,16 @@
+mixin card-photos(obj)
+    div(class=`${obj.classBigPhotos}`)
+        each item, key in obj.items
+            +card-big-photos(obj.classBigPhotos, item)
+    div(class=`${obj.classSmallPhotos}`)
+        each item, key in obj.items
+            +card-small-photos(obj.classSmallPhotos, item)
+
+mixin card-big-photos(cl, i)
+    div(class=`${cl}__item`)
+        a(class=`${cl}__link` href=`${config.pathImg}/${i.bigPhoto}` title=`${i.name}` data-fancybox=`${cl}`)
+            img(class=`${cl}__img` src=`${config.pathImg}/${i.bigPhoto}` alt=`${i.name}`)
+
+mixin card-small-photos(cl, i)
+    div(class=`${cl}__item`)
+        img(class=`${cl}__img` src=`${config.pathImg}/${i.smallPhoto}`, alt=`${i.name}`)

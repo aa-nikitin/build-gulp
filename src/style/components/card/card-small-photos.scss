@@ -1,0 +1,75 @@
+.card-small-photos {
+    margin: 2px -1px 0px -1px;
+    position: relative;
+    &__item {
+        padding: 0px 1px;
+        outline: none;
+        opacity: 0.6;
+        transition-property: all;
+        transition-duration: 0.7s;
+    }
+    &__img {
+        display: block;
+        cursor: pointer;
+    }
+
+    &:hover {
+        & .slick-arrow {
+            opacity: 0.4;
+        }
+    }
+
+    & .slick-current {
+        opacity: 1;
+    }
+
+    & .slick-arrow {
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        width: 20px;
+        background: #000;
+        border: none;
+        z-index: 2;
+        font-size: 0px;
+        cursor: pointer;
+        outline: none;
+        opacity: 0;
+        transition-property: all;
+        transition-duration: 0.7s;
+        &:hover {
+            background-color: #314b7e;
+            opacity: 0.5;
+        }
+        &:after {
+            content: '';
+            @include FontAwesome();
+            font-size: 20px;
+            color: #fff;
+            display: block;
+            @include centered();
+        }
+    }
+
+    & .slick-prev {
+        left: 0px;
+        &:after {
+            content: '\f104';
+        }
+    }
+
+    & .slick-next {
+        right: 0px;
+        &:after {
+            content: '\f105';
+        }
+    }
+}
+
+.card-small-photos {
+    & .slick-arrow {
+        @include lg() {
+            display: none !important;
+        }
+    }
+}
