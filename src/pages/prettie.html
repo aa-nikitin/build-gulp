@@ -1,0 +1,63 @@
+<div class="page-order">
+    <div class="page-order__head">Расчет стоимости перевозки:</div>
+    <form class="page-order__form">
+        <div class="form-field page-order__form-field page-order__name-box">
+            <input
+                class="form-field__edit"
+                id="page-order-name"
+                name="page-order-name"
+                type="text"
+                placeholder="Представьтесь:"
+            />
+        </div>
+        <div class="form-field page-order__form-field page-order__phone-box">
+            <input
+                class="form-field__edit form-field_icon-phone mask-phone"
+                id="page-order-phone"
+                name="page-order-phone"
+                type="text"
+                placeholder="Контактный телефон:"
+            />
+            <div class="form-field__icon icon-phone"></div>
+        </div>
+        <div class="form-field page-order__form-field page-order__message-box">
+            <textarea
+                class="form-field__edit"
+                id="page-order-message"
+                name="page-order-message"
+                type="text"
+                placeholder="Сообщение:"
+            ></textarea>
+        </div>
+        <div class="page-order__button-box">
+            <a class="button page-order__button" id="page-order-button"
+                >Заказать</a
+            >
+        </div>
+        <div class="checkbox page-order__checkbox page-order__checkbox-box">
+            <label class="checkbox">
+                <input
+                    class="checkbox__input"
+                    id="page-order-checkbox"
+                    data-value="yes"
+                    type="checkbox"
+                    name="page-order-checkbox"
+                /><span class="checkbox__custom"></span
+                ><span class="checkbox__label">
+                    Я прочитал и согласен с правилами
+                    <a target="_blank" href="#"
+                        >Политика конфиденциальности</a
+                    ></span
+                >
+            </label>
+        </div>
+        <input
+            class="field-hidden__edit"
+            id="page-order-page"
+            name="page-order-page"
+            hidden="hidden"
+            type="hidden"
+            value=""
+        />
+    </form>
+</div>

@@ -1,6 +1,7 @@
 import toggle from './modules/toggle.js';
 
-import './components/forms.js';
+import './components/formsPopUp.js';
+import './components/formsSend.js';
 import './components/menu.js';
 import './components/sliders.js';
 

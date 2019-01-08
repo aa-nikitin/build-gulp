@@ -1,19 +1,23 @@
-.popup-order 
-    .popup-order__container
-        .popup-order__box   
-            .popup-order__top
-                h2.popup-order__head Оставьте заявку  
-                .popup-order__close 
-            .popup-order__descr
-            .popup-order__body 
-                form.form-page.form-page_border_none.popup-order__form
-                    +form(poupForm)
+.popup-order.mfp-hide.mfp-with-anim(id="popup-order")  
+    .popup-order__top
+        h2.popup-order__head Оставьте заявку  
+    .popup-order__descr
+    .popup-order__body 
+        form.form-page.form-page_border_none.popup-order__form
+            +form(poupForm)
 
 .preloader
+    - var i = 0;
+    .sk-circle-bounce
+        while i < 12
+            div(class=`sk-child sk-circle-${++i}`)
+    //- .sk-circle-bounce
+    //- - (1..12).each do |i|
+    //-   .sk-child{:class => "sk-circle-#{i}"}
 
-.success-message(id='success-message')
-    .success-message__wrap
-        .success-message__box
-            .success-message__text Спасибо! Ваша заявка успешно отправлена!
-            .success-message__text Мы свяжемся с Вами в ближайшее время.
-            .button.button_red.success-message__button Продолжить
+.success-message.mfp-hide.mfp-with-anim(id='success-message')
+    .success-message__text Спасибо! Ваша заявка отправлена!
+    .success-message__text Мы свяжемся с Вами в ближайшее время.
+    .button.success-message__button.popup-modal-dismiss Продолжить
+
+a.success-message-btn.popup-with-form(href="#success-message"  data-effect="mfp-zoom-in")

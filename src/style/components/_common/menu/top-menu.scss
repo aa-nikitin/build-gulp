@@ -11,6 +11,12 @@
                 color: #ffffff;
             }
         }
+        &:hover {
+            & .top-menu__link {
+                color: #fff;
+                background: #253a65;
+            }
+        }
     }
 
     &__link {

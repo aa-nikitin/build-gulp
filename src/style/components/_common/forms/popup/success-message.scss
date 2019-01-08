@@ -1,0 +1,23 @@
+.success-message {
+    background: #fff;
+    border: solid 2px #314b7e;
+    padding: 35px 25px;
+    max-width: 400px;
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 5px;
+
+    &__text {
+        font-size: 17px;
+        padding-bottom: 10px;
+    }
+
+    &__button {
+        margin-top: 10px;
+    }
+}
+
+.success-message-btn {
+    display: none;
+}
