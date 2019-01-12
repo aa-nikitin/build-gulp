@@ -1,0 +1,17 @@
+.icon-adress {
+    &:after {
+        content: '\f041';
+        display: block;
+        @include FontAwesome;
+        font-size: 20px;
+    }
+}
+
+.icon-email {
+    &:after {
+        content: '\f1d9';
+        display: block;
+        @include FontAwesome;
+        font-size: 20px;
+    }
+}

@@ -6,8 +6,22 @@
         align-items: center;
     }
 
+    &__right {
+    }
+
+    &__right-row {
+        align-items: center;
+    }
+
     &__info {
         text-align: center;
+    }
+
+    &__phone {
+        margin-bottom: 5px;
+    }
+
+    &__info-row {
     }
 
     &__order {

@@ -1,0 +1,9 @@
+//- .className - класс
+//- .iconClass - класс иконки
+//- .text - текст
+
+mixin icon-text(obj) 
+    div(class=`${obj.className}`) 
+        if (obj.iconClass)
+            div(class=`${obj.className}__icon ${obj.iconClass}`)   
+        div(class=`${obj.className}__text`) !{obj.text}
