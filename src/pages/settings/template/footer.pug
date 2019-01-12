@@ -12,13 +12,9 @@ footer.footer
                     +menu(footerMenu)
                     .row.footer-top__contacts 
                         .col-xs-6
-                            .phone 
-                                .phone__icon.icon-office-telephone-footer   
-                                .phone__number !{config.phones[0]}
+                            +icon-text(phoneFooter1)
                         .col-xs-6
-                            .phone 
-                                .phone__icon.icon-phone-footer    
-                                .phone__number !{config.phones[1]}
+                            +icon-text(phoneFooter2)
     .footer__bottom
         .container
             .row.footer-bottom
