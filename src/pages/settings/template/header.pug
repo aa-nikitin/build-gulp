@@ -5,25 +5,22 @@ header.header
                 a(href="/").logo
                     img.header__image(src=`${config.pathImg}/${config.logo}` alt='')    
             .col-xs-7.col-lg-9.header__right
-                .row.header__right-row
-                    .col-md-8.col-lg-8.header__info 
-                        .row.header__info-row 
-                            .col-xs-6.header__phone
-                                +icon-text(phone1)
-                            .col-xs-6.header__phone
-                                +icon-text(phone2)
-                            .col-xs-6.header__adress
-                                +icon-text(adress)
-                            .col-xs-6.header__email
-                                +icon-text(email)
-
-                    .col-xs-4.header__order
-                        a.header__button-order.button.popup-with-form(href="#popup-order"  data-effect="mfp-zoom-in") Обратный звонок
-                    .col-xs-12.header__mmenu
-                        a.mmenu(href="#mmenu")
-                            span.mmenu__item 
-                            span.mmenu__item 
-                            span.mmenu__item 
+                .header__info 
+                    .header__phone
+                        +icon-text(phone1)
+                    .header__phone
+                        +icon-text(phone2)
+                    .header__adress
+                        +icon-text(adress)
+                    .header__email
+                        +icon-text(email)
+                .header__order
+                    a.header__button-order.button.popup-with-form(href="#popup-order"  data-effect="mfp-zoom-in") Обратный звонок
+                .header__mmenu
+                    a.mmenu(href="#mmenu")
+                        span.mmenu__item 
+                        span.mmenu__item 
+                        span.mmenu__item 
 nav.top-menu-header
     .container
         +menu(topMenu)

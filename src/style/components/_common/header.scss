@@ -7,24 +7,36 @@
     }
 
     &__right {
-    }
-
-    &__right-row {
+        display: flex;
         align-items: center;
+        justify-content: space-between;
     }
 
     &__info {
+        display: flex;
         text-align: center;
+        flex-wrap: wrap;
+        width: 70%;
     }
 
     &__phone {
         margin-bottom: 5px;
+        width: 50%;
+    }
+
+    &__adress {
+        width: 50%;
+    }
+
+    &__email {
+        width: 50%;
     }
 
     &__info-row {
     }
 
     &__order {
+        width: 30%;
     }
 
     &__mmenu {
