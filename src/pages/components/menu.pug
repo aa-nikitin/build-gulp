@@ -16,8 +16,8 @@ mixin menu(obj)
 
 mixin menu-item(cl, i, lvl) 
     if (i.subMenu && lvl > 1) 
-        li(class=`${cl}__item`+ ((i.classActive) ? ` ${i.classActive}` : ''))
-            a(href=i.link class=`${cl}__link ${cl}_arrow`) !{i.name}
+        li(class=`${cl}__item ${cl}_arrow`+ ((i.classActive) ? ` ${i.classActive}` : ''))
+            a(href=i.link class=`${cl}__link`) !{i.name}
             ul(class = `${cl}__sub`)
                 each item in i.subMenu
                     +menu-sub-item(cl, item)
