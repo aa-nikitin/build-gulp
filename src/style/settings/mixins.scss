@@ -2,29 +2,33 @@
 
 @mixin centered($axis: 'both') {
     position: absolute;
-    @if $axis=='x' {
+    @if $axis== 'x' {
         left: 50%;
         transform: translateX(-50%);
     }
-    @if $axis=='y' {
+    @if $axis== 'y' {
         top: 50%;
         transform: translateY(-50%);
     }
-    @if $axis=='both' {
+    @if $axis== 'both' {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
     }
-  
-    @if $axis=='mirror' {
-        bottom:50%;
+
+    @if $axis== 'mirror' {
+        bottom: 50%;
         transform: rotate(180deg) translateY(-50%);
     }
 }
 
-
-  
 // -- media breakpoints --
+
+@mixin xs() {
+    @media screen and (max-width: $xs) {
+        @content;
+    }
+}
 
 @mixin sm() {
     @media screen and (max-width: $sm) {
@@ -49,15 +53,20 @@
         @content;
     }
 }
-  
-
 
 // цвет для плейсхолдера инпута [наименование класса, цвет]
 
-@mixin placeholder($className:'',$color:#ccc){  
-    .#{$className}::-webkit-input-placeholder {color:$color;}
-    .#{$className}:-moz-placeholder {color:$color;}
-    .#{$className}::-moz-placeholder {color:$color;}
-    .#{$className}:-ms-input-placeholder {color:$color;}   
+@mixin placeholder($className: '', $color: #ccc) {
+    .#{$className}::-webkit-input-placeholder {
+        color: $color;
+    }
+    .#{$className}:-moz-placeholder {
+        color: $color;
+    }
+    .#{$className}::-moz-placeholder {
+        color: $color;
+    }
+    .#{$className}:-ms-input-placeholder {
+        color: $color;
+    }
 }
-

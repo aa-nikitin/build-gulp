@@ -1,23 +1,31 @@
 // -- grids --
 
+$indent-col: 15px; // -Отступы в колонках
+$indent-take: 30px; // -вычетается из ширины контента с обоих сторон
+
 $xs: 420px;
 $sm: 576px;
 $md: 768px;
 $lg: 992px;
-$xl: 1260px;
+$xl: 1170px + ($indent-col * 2) + ($indent-take * 2);
 
-@import 'settings/grids/flexgrid.scss';
-//@import "settings/grids/floatgrid.scss";
+// -- чистая ширина контента --
+$windent: ($indent-col * 2) + ($indent-take * 2); // суммарный отступ с двух сторон
+$wxs: $xs - $windent;
+$wsm: $sm - $windent;
+$wmd: $md - $windent;
+$wlg: $lg - $windent;
+$wxl: $xl - $windent;
 
+@import 'settings/grids/grid-container.scss';
+// @import 'settings/grids/flexgrid.scss';
+
+// @import "settings/grids/floatgrid.scss";
 // -- fonts --
-
 @import '../fonts/**/*';
-
 // -- settings --
-
 @import 'settings/mixins.scss';
 @import 'settings/fonts.scss';
 @import 'settings/base.scss';
-
 // -- components --
 @import 'components/**/*';

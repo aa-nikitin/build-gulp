@@ -1,0 +1,28 @@
+/* Uncomment and set these variables to customize the grid. */
+
+$screen-extensions: (
+    xxs: 0,
+    xs: $xs,
+    sm: $sm,
+    md: $md,
+    lg: $lg,
+    xl: $xl
+); // -расширения экранов
+
+@each $key, $size in $screen-extensions {
+    @media only screen and (min-width: $size) {
+        .container {
+            @if $key == xxs {
+                padding-right: $indent-col;
+                padding-left: $indent-col;
+                width: auto;
+            } @else if $key == xl {
+                width: $size - ($indent-take * 2);
+                margin: 0 auto;
+            } @else {
+                width: $size - ($indent-take * 2);
+                margin: 0 auto;
+            }
+        }
+    }
+}

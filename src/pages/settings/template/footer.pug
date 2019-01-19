@@ -3,24 +3,25 @@ footer.footer
     
     .footer__top
         .container
-            .row.footer-top
-                .col-xs-4.footer-top__left
+            .footer-top
+                .footer-top__left
                     a(href="/").logo
                         img.header__image(src=`${config.pathImg}/${config.logoFooter}` alt='')  
                     +socials(socials) 
-                .col-xs-12.col-lg-8.footer-top__right 
-                    +menu(footerMenu)
-                    .row.footer-top__contacts 
-                        .col-xs-6
+                .footer-top__right 
+                    .footer-menu
+                        +list(footerMenu)
+                    .footer-top__contacts.footer-contacts 
+                        .footer-contacts__item
                             +icon-text(phoneFooter1)
-                        .col-xs-6
+                        .footer-contacts__item
                             +icon-text(phoneFooter2)
     .footer__bottom
         .container
-            .row.footer-bottom
-                .col-xs-12.col-md-6.footer-bottom__left 
+            .footer-bottom
+                .footer-bottom__left 
                     .copyright !{config.copyright}
-                .col-xs-12.col-md-6.footer-bottom__right
+                .footer-bottom__right
                     .footer-bottom__counter.counter
                         img(src=`${config.pathImg}/${config.counter}`, alt="")
                     .footer-bottom__made-in.made-in Сделано в компании 

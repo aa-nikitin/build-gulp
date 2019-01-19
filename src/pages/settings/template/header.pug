@@ -1,26 +1,26 @@
 header.header
     .container
-        .row.header__row
-            .col-xs-5.col-lg-3.header__logo
+        .header__row
+            .header__item.header_logo
                 a(href="/").logo
                     img.header__image(src=`${config.pathImg}/${config.logo}` alt='')    
-            .col-xs-7.col-lg-9.header__right
-                .header__info 
-                    .header__phone
-                        +icon-text(phone1)
-                    .header__phone
-                        +icon-text(phone2)
-                    .header__adress
-                        +icon-text(adress)
-                    .header__email
-                        +icon-text(email)
-                .header__order
-                    a.header__button-order.button.popup-with-form(href="#popup-order"  data-effect="mfp-zoom-in") Обратный звонок
-                .header__mmenu
-                    a.mmenu(href="#mmenu")
-                        span.mmenu__item 
-                        span.mmenu__item 
-                        span.mmenu__item 
+            .header__item.header_info
+                .header__phone
+                    +icon-text(phone1)
+                .header__adress
+                    +icon-text(adress)
+            .header__item.header_info
+                .header__phone
+                    +icon-text(phone2)
+                .header__email
+                    +icon-text(email)
+            .header__item.header_order
+                a.header__button-order.button.popup-with-form(href="#popup-order"  data-effect="mfp-zoom-in") Обратный звонок
+            .header__item.header_mmenu
+                a.mmenu(href="#mmenu")
+                    span.mmenu__item 
+                    span.mmenu__item 
+                    span.mmenu__item 
 nav.top-menu-header
     .container
         +menu(topMenu)

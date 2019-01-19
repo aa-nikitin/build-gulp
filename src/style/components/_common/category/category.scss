@@ -9,15 +9,14 @@
         width: 25%;
         padding: 5px;
     }
-}
 
-.category {
-    &__item {
-        @include lg() {
+    @include lg() {
+        &__item {
             width: 33.33%;
         }
-
-        @include md() {
+    }
+    @include md() {
+        &__item {
             width: 50%;
         }
     }

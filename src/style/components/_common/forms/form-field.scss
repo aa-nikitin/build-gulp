@@ -35,6 +35,17 @@
     & .error {
         border-bottom: solid 1px red;
     }
+
+    @include md() {
+        &__icon {
+            &.icon-phone {
+                left: 5px;
+            }
+        }
+        &_icon-phone {
+            padding-left: 20px;
+        }
+    }
 }
 
 @include placeholder('form-field__edit', #474747);

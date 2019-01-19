@@ -3,65 +3,39 @@
     background: #ffffff;
 
     &__row {
-        align-items: center;
-    }
-
-    &__right {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        margin-left: -$indent-col;
+        margin-right: -$indent-col;
     }
 
-    &__info {
-        display: flex;
-        text-align: center;
-        flex-wrap: wrap;
-        width: 70%;
+    &__item {
+        width: 25%;
+        padding-left: $indent-col;
+        padding-right: $indent-col;
     }
 
-    &__phone {
-        margin-bottom: 5px;
-        width: 50%;
-    }
-
-    &__adress {
-        width: 50%;
-    }
-
-    &__email {
-        width: 50%;
-    }
-
-    &__info-row {
-    }
-
-    &__order {
-        width: 30%;
-    }
-
-    &__mmenu {
+    &_mmenu {
         display: none;
     }
-}
 
-.header {
-    &__info {
-        @include lg() {
+    @include lg() {
+        &_info {
             display: none;
         }
-    }
-
-    &__order {
-        @include lg() {
+        &_order {
             display: none;
         }
-    }
-
-    &__mmenu {
-        @include lg() {
+        &_mmenu {
             display: flex;
             align-items: center;
             justify-content: flex-end;
+        }
+    }
+    @include sm() {
+        &_logo {
+            width: 40%;
         }
     }
 }

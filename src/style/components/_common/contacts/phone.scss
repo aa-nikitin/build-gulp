@@ -10,11 +10,9 @@
         font-size: 24px;
         font-weight: 700;
     }
-}
 
-.phone {
-    &__text {
-        @include xl() {
+    @include xl() {
+        &__text {
             font-size: 18px;
         }
     }

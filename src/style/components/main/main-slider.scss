@@ -32,11 +32,9 @@
             }
         }
     }
-}
 
-.main-slider {
-    & .slick-dots {
-        @include md() {
+    @include md() {
+        & .slick-dots {
             display: none !important;
         }
     }

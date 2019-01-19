@@ -38,11 +38,11 @@ block variables
 
 block content
     .container.content
-        .row
-            .col-xs-3.col-lg-4.col-xl-3.content__left
+        .content__row
+            .content__left
                 +menu(leftMenu)
                 
-            .col-xs-12.col-lg-8.col-xl-9.content__right.typography
+            .content__right.typography
                 +breadcrumbs(breadcrumbs)
 
                 h1 Заголовок H1
@@ -72,8 +72,6 @@ block content
                     .page-order__head Расчет стоимости перевозки:
                     form.page-order__form
                         +form(pageForm)
-
-                
 
                 +seoText(seoText)
                     p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.

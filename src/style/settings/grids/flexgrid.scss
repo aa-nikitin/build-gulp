@@ -1,7 +1,13 @@
 /* Uncomment and set these variables to customize the grid. */
-$count-col : 12; // -Количество колонок
-$indent-col : 15px; // -Отступы в колонках
-$screen-extensions: (xs: 0px, sm: $sm, md: $md, lg: $lg, xl: $xl); // -расширения экранов
+$count-col: 12; // -Количество колонок
+$indent-col: 15px; // -Отступы в колонках
+$screen-extensions: (
+    xs: 0px,
+    sm: $sm,
+    md: $md,
+    lg: $lg,
+    xl: $xl
+); // -расширения экранов
 
 .container-fluid {
     margin-right: auto;
@@ -9,7 +15,7 @@ $screen-extensions: (xs: 0px, sm: $sm, md: $md, lg: $lg, xl: $xl); // -расш�
     padding-right: 32px;
     padding-left: 32px;
 }
-  
+
 .row {
     box-sizing: border-box;
     display: flex;
@@ -26,7 +32,7 @@ $screen-extensions: (xs: 0px, sm: $sm, md: $md, lg: $lg, xl: $xl); // -расш�
     padding-right: $indent-col;
     padding-left: $indent-col;
 }
-  
+
 .col {
     flex-grow: 1;
     flex-basis: 0;
@@ -35,7 +41,6 @@ $screen-extensions: (xs: 0px, sm: $sm, md: $md, lg: $lg, xl: $xl); // -расш�
 }
 
 @each $key, $size in $screen-extensions {
-    
     @for $i from 1 through $count-col {
         .col-#{$key}-#{$i} {
             @extend .col-n;
@@ -46,20 +51,20 @@ $screen-extensions: (xs: 0px, sm: $sm, md: $md, lg: $lg, xl: $xl); // -расш�
             @if $key == xs {
                 padding-right: $indent-col;
                 padding-left: $indent-col;
-                width: auto;   
+                width: auto;
             } @else {
                 width: $size - ($indent-col * 4);
-                margin:0 auto;
+                margin: 0 auto;
             }
         }
 
         @for $i from 1 through $count-col {
-            $w-col : (100% / $count-col) * $i;
+            $w-col: (100% / $count-col) * $i;
             .col-#{$key}-#{$i} {
                 flex-basis: $w-col;
-                max-width: $w-col;  
+                max-width: $w-col;
             }
-    
+
             .col-#{$key}-offset-#{$i} {
                 margin-left: $w-col;
             }

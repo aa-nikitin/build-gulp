@@ -1,8 +1,8 @@
 // -- options --
 
-$color-font : #484848; //- цвет заголовка
-$color-link : #314b7e; //- цвет закрыть
-$separator : '/'; //- цвет подложки
+$color-link: #314b7e; //- цвет ссылок
+$color-font: #484848; //- цвет наименования текущей страницы
+$separator: '/'; //- разделитель
 
 .breadcrumbs {
     margin: 0px 0px 15px;
@@ -13,7 +13,7 @@ $separator : '/'; //- цвет подложки
     & li {
         display: inline-block;
         padding: 0px 4px 0px 0px !important;
-        background:none;
+        background: none;
         &:before {
             display: none;
         }
@@ -24,7 +24,7 @@ $separator : '/'; //- цвет подложки
         &:last-child:after {
             content: '';
         }
-    
+
         & a {
             margin-right: 7px;
             display: inline-block;
@@ -32,9 +32,6 @@ $separator : '/'; //- цвет подложки
             &:hover {
                 text-decoration: none;
             }
-        } 
+        }
     }
-
 }
-
-

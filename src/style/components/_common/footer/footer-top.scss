@@ -1,12 +1,26 @@
 .footer-top {
     padding: 30px 0px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: -$indent-col;
+    margin-right: -$indent-col;
+
+    &__left {
+        width: percentage(400px / $wxl);
+        padding-left: $indent-col;
+        padding-right: $indent-col;
+    }
+
+    &__right {
+        width: percentage(800px / $wxl);
+        padding-left: $indent-col;
+        padding-right: $indent-col;
+    }
 
     &__contacts {
         margin-top: 20px;
     }
-}
 
-.footer-top {
     @include lg() {
         display: none;
     }

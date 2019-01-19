@@ -1,7 +1,28 @@
 .card {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -$indent-col;
+    margin-right: -$indent-col;
     &__left {
+        width: 40%;
+        padding-left: $indent-col;
+        padding-right: $indent-col;
     }
 
     &__right {
+        width: 60%;
+        padding-left: $indent-col;
+        padding-right: $indent-col;
+    }
+
+    @include sm() {
+        &__left {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        &__right {
+            width: 100%;
+        }
     }
 }

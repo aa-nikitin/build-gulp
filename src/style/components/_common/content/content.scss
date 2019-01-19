@@ -2,21 +2,50 @@
     padding-top: 30px;
     padding-bottom: 40px;
 
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        // margin-left: -$indent-col;
+        // margin-right: -$indent-col;
+    }
+
+    // если нет сайдбара
+    &__wrap {
+        width: 100%;
+        // padding-left: $indent-col;
+        // padding-right: $indent-col;
+    }
+
     &__left {
+        width: percentage(270px / $wxl);
+        // padding-left: $indent-col;
+        // padding-right: $indent-col;
     }
 
     &__right {
+        width: percentage(870px / $wxl);
+        // padding-left: $indent-col;
+        // padding-right: $indent-col;
     }
 }
 
 .content {
+    @include xl() {
+        &__left {
+            width: percentage(370px / $wxl);
+        }
+
+        &__right {
+            width: percentage(770px / $wxl);
+        }
+    }
     @include lg() {
         margin-top: 0px;
-    }
-
-    &__left {
-        @include lg() {
+        &__left {
             display: none;
+        }
+        &__right {
+            width: 100%;
         }
     }
 }

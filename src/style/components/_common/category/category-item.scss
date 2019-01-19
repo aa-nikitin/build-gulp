@@ -19,14 +19,14 @@
         text-decoration: none;
         padding: 20px;
     }
-}
 
-.category-item {
-    &__name {
-        @include lg() {
+    @include lg() {
+        &__name {
             padding: 15px;
         }
-        @include md() {
+    }
+    @include md() {
+        &__name {
             padding: 10px;
         }
     }

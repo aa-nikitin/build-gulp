@@ -64,11 +64,9 @@
             content: '\f105';
         }
     }
-}
 
-.card-small-photos {
-    & .slick-arrow {
-        @include lg() {
+    @include lg() {
+        & .slick-arrow {
             display: none !important;
         }
     }
