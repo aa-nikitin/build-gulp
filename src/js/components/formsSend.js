@@ -25,6 +25,7 @@ const arrFields = [
 
 order({
     nameWindow: 'popup-order',
+    nameOrder: 'Обратный звонок',
     preload: 'preloader',
     successForm: 'success-message',
     phpFile: 'send-order-page',
@@ -33,6 +34,7 @@ order({
 
 order({
     nameWindow: 'page-order',
+    nameOrder: 'Заявка',
     preload: 'preloader',
     successForm: 'success-message',
     phpFile: 'send-order-page',

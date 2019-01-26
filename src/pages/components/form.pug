@@ -25,6 +25,8 @@ mixin form(obj)
 //- .iconName - класс иконки для поля
 //- .maskClass - доп класс например для маски телефона
 //- .dataValue - значение в data-value для checkbox
+//- .buttonEffect - имя класса эффекта для кнопки (button-effect)
+//- .buttonModEffect - имя модификатора эффекта кнопки (singularity)
 
 mixin text-field(cl, i) 
     div(class=`${i.typeClass} ${cl}__${i.typeClass} ${cl}__${i.name}-box`)
@@ -52,7 +54,8 @@ mixin checkbox(cl, i)
 
 mixin button(cl, i) 
     div(class=`${cl}__${i.name}-box`)
-        a(class=`${i.typeClass} ${cl}__${i.typeClass}` + (i.maskClass ? ` ${i.maskClass}` : ``) id=`${cl}-${i.name}`) #{i.caption}
+        a(class=`${i.typeClass} ${cl}__${i.typeClass}` + (i.buttonEffect ? ` ${i.buttonEffect} ${i.buttonEffect}_${i.buttonModEffect}` : ``) id=`${cl}-${i.name}`) 
+            span(class=`` + (i.buttonEffect ? ` ${i.buttonEffect}_text` : ``)) #{i.caption}
 
 mixin hidden(cl, i) 
     input(class=`${i.typeClass}__edit` id=`${cl}-${i.name}` name=`${cl}-${i.name}` hidden type="hidden" value=``)

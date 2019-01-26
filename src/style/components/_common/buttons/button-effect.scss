@@ -1,0 +1,136 @@
+$hoverBackground: rgba(
+    $color: #fff,
+    $alpha: 0.2
+);
+.button-effect {
+    position: relative;
+    overflow: hidden;
+    &__text {
+        position: relative;
+        z-index: 2;
+    }
+    &_fill {
+        &:hover {
+            &:before {
+                width: 100%;
+            }
+        }
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
+            width: 0px;
+            background: $hoverBackground;
+            transition-property: all;
+            transition-duration: 0.5s;
+        }
+    }
+    &_fade {
+        &:hover {
+            &:before {
+                opacity: 1;
+            }
+        }
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            background: $hoverBackground;
+            transition-property: all;
+            transition-duration: 0.5s;
+            opacity: 0;
+        }
+    }
+    &_radius {
+        &:hover {
+            &:before {
+                top: 0%;
+                bottom: 0%;
+                left: 0%;
+                right: 0%;
+                border-radius: 0%;
+            }
+        }
+        &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            bottom: 50%;
+            left: 50%;
+            right: 50%;
+            background: $hoverBackground;
+            border-radius: 100%;
+            transition-property: all;
+            transition-duration: 0.5s;
+        }
+    }
+    &_singularity {
+        &:hover {
+            &:before {
+                top: 0%;
+                bottom: 0%;
+                left: 0%;
+                width: 50%;
+                border-radius: 0%;
+            }
+            &:after {
+                top: 0%;
+                bottom: 0%;
+                right: 0%;
+                width: 50%;
+                border-radius: 0%;
+            }
+        }
+        &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            bottom: 50%;
+            left: 50%;
+            width: 50%;
+            background: $hoverBackground;
+            border-radius: 100%;
+            transition-property: all;
+            transition-duration: 0.5s;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            bottom: 50%;
+            right: 50%;
+            width: 50%;
+            background: $hoverBackground;
+            border-radius: 100%;
+            transition-property: all;
+            transition-duration: 0.5s;
+        }
+    }
+    &_circle {
+        &:hover {
+            &:before {
+                top: 0%;
+                bottom: 0%;
+                left: 0%;
+                width: 20%;
+            }
+        }
+        &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            bottom: 50%;
+            left: 50%;
+            width: 50%;
+            background: $hoverBackground;
+            border-radius: 100%;
+            transition-property: all;
+            transition-duration: 0.5s;
+        }
+    }
+}

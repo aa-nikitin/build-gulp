@@ -42,6 +42,10 @@
         font-size: 12px;
     }
 
+    &__button {
+        display: block;
+    }
+
     @include md() {
         padding: 20px;
         &__form-field {

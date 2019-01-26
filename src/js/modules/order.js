@@ -4,6 +4,7 @@ const order = function(params) {
         var is_error = 0;
         var orderList = { url: location.href };
         orderList['type_order'] = params.nameWindow;
+        orderList['name_order'] = params.nameOrder;
 
         for (let field of params.arr) {
             var elem = `#${params.nameWindow}-${field.name}`;

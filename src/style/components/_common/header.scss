@@ -16,6 +16,10 @@
         padding-right: $indent-col;
     }
 
+    &__button-order {
+        display: block;
+    }
+
     &_mmenu {
         display: none;
     }

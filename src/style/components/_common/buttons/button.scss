@@ -3,22 +3,13 @@
     border-radius: 5px;
     color: #fff;
     cursor: pointer;
-    display: block;
+    display: inline-block;
     text-align: center;
     background: #314b7e;
     transition-property: all;
     transition-duration: 0.7s;
     text-decoration: none;
     &:hover {
-        background: #7889aa;
         color: #fff;
     }
-    &:active {
-        background: #273b63;
-        color: #fff;
-    }
-}
-
-.button_inline {
-    display: inline-block;
 }
